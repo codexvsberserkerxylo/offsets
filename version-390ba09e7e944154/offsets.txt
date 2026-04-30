@@ -1,0 +1,154 @@
+DATE: 2026-04-28 13:39:57
+TIME: 34.556s
+VER : version-390ba09e7e944154
+OK  : 48/87
+================================================
+
+[POINTER]
+  AppDataInfo                            0x7b6d500
+
+[HYPERION]
+  BitMap                                 0xda8550
+
+[POINTER]
+  Children                               FAILED (Not found)
+
+[HYPERION]
+  ControlFlowGuard                       0x6ffb0
+
+[POINTER]
+  EnableLoadModule                       0x7061ce8
+  FakeDataModelPointer                   FAILED (Not found)
+  FakeDataModelToDataModel               FAILED (Not found)
+
+[FUNCTION]
+  FireMouseClick                         0x25abbf0
+  FireMouseHoverEnter                    0x25ad190
+  FireMouseHoverLeave                    0x25ad330
+  FireProximityPrompt                    0x1ab110
+  FireRightMouseClick                    0x25abbf0
+  FireTouchInterest                      0x4724210
+
+[POINTER]
+  GameId                                 FAILED (Not found)
+  GameLoaded                             FAILED (Not found)
+
+[FUNCTION]
+  get_capabilities                       0x46fe600
+  GetContextObject                       0x49c78e3c
+  GetCurrentThreadId                     0x4724210
+  GetFFlag                               0x4734f70
+  GetGlobalState                         0x4a678b0
+  GetIdentityStruct                      0x7fb0
+  GetLuaStateForInstance                 0x1c33f90
+  GetProperty                            0x4724210
+  GetRobloxPropertyData                  0xc62a20
+  GetTlsPointer                          0x7fb0
+  HashTableLookup                        0x1c11fb7
+
+[POINTER]
+  IdentityPtr                            0x75e1300
+
+[FUNCTION]
+  Impersonator                           0x44359b0
+  InstanceBridge_Push                    0x1d29e60
+
+[POINTER]
+  IsCoreScript                           FAILED (Not found)
+
+[FUNCTION]
+  IsLegalSendEvent                       0xa66010
+
+[POINTER]
+  KTable                                 0x749b670
+  LockViolationScriptCrash               0x75188c8
+
+[FUNCTION]
+  lua_pushfstringl                       FAILED (Not found)
+  lua_pushvfstring                       FAILED (Not found)
+  lua_rawcheckstack                      FAILED (Not found)
+  lua_xmove                              FAILED (Not found)
+  luaA_toobject                          0x432d320
+  luaC_step                              FAILED (Not found)
+  luaD_throw                             FAILED (Not found)
+  luaf_freeproto                         0x4b9b9d0
+  luaF_newproto                          0x75ff70
+  luaG_runerrorl                         0x432f510
+
+[POINTER]
+  luaH_dummynode                         0x7bf7f90
+
+[FUNCTION]
+  luaL_argerrorl                         FAILED (Not found)
+  luaL_checkany                          FAILED (Not found)
+  luaL_checklstring                      FAILED (Not found)
+  luaL_checktype                         FAILED (Not found)
+  luaL_errorl                            FAILED (Not found)
+  luaL_findtable                         FAILED (Not found)
+  luaL_newmetatable                      FAILED (Not found)
+  luaL_pushresult                        FAILED (Not found)
+  luaL_register                          FAILED (Not found)
+  luaL_typeerrorl                        FAILED (Not found)
+  luaL_where                             FAILED (Not found)
+  luaM_free                              FAILED (Not found)
+  luaM_freegco                           FAILED (Not found)
+  luaM_toobig                            0x4389c90
+  luaM_visitgco                          FAILED (Not found)
+  luaO_chunkid                           FAILED (Not found)
+
+[POINTER]
+  luaO_nilobject                         0x5fc6de8
+
+[FUNCTION]
+  luaO_pushfstring                       FAILED (Not found)
+  luaO_pushvfstring                      FAILED (Not found)
+  luaopen_base                           FAILED (Not found)
+
+[POINTER]
+  luaT_Eventnames                        0x5ee5b48
+
+[FUNCTION]
+  luaT_objtypename                       FAILED (Not found)
+  luaT_objtypenamestr                    FAILED (Not found)
+
+[POINTER]
+  luaT_typenames                         0x5b98a70
+
+[FUNCTION]
+  Luau_Execute                           FAILED (Not found)
+  luaV_getimport                         FAILED (Not found)
+  LuaVMLoad                              0x87e790
+
+[POINTER]
+  Name                                   FAILED (Not found)
+  OpcodeLookupTable                      0x342b730
+  PhysicsSenderMaxBandwidthBps           0x782d5f8
+  Primitive                              FAILED (Not found)
+
+[FUNCTION]
+  Print                                  0x1dea8d0
+  pseudotoaddr                           FAILED (Not found)
+
+[POINTER]
+  RawScheduler                           0x7c73e50
+
+[FUNCTION]
+  Register                               0x2b69ca0
+
+[POINTER]
+  RequireBypass                          0x7061ce8
+  ScriptContext                          FAILED (Not found)
+
+[FUNCTION]
+  ScriptContextResume                    0x1d63290
+
+[POINTER]
+  ScriptContextToResume                  0x469abddc
+
+[FUNCTION]
+  TaskDefer                              0x1578c20
+
+[POINTER]
+  TaskSchedulerTargetFps                 0x782d5f8
+  Userdata                               FAILED (Not found)
+  WndProcessCheck                        0x703b798

@@ -1,6 +1,6 @@
 // dumped by nick \\
-// date: 2026-04-27 20:05:16 \\
-// took 6.3s \\
+// date: 2026-04-29 20:41:47 \\
+// took 21.9s \\
 
 #pragma once
 #include <cstdint>
@@ -14,10 +14,12 @@ static const uintptr_t Hyperion_Base = reinterpret_cast<uintptr_t>(GetModuleHand
 
 namespace Offsets
 {
+    inline constexpr const char* LiveChannel = "acc4b74f79e743b9";
+
     namespace hyperion
     {
-    const uintptr_t BitMap = HYP_REBASE(0xf9a810);
-    const uintptr_t ControlFlowGuard = HYP_REBASE(0xbc5e00);
+    const uintptr_t BitMap = HYP_REBASE(0xda8550);
+    const uintptr_t ControlFlowGuard = HYP_REBASE(0x6ffb0);
 
         inline constexpr uint8_t  ByteShift = 15;
         inline constexpr uint8_t  PageShift = 12;
@@ -51,70 +53,54 @@ namespace Offsets
 
     namespace Pointers
     {
-    const uintptr_t AppDataInfo = REBASE(0x7b6d500);
-    const uintptr_t EnableLoadModule = REBASE(0x7061ce8);
-    const uintptr_t IdentityPtr = REBASE(0x75e1300);
-    const uintptr_t KTable = REBASE(0x749b670);
-    const uintptr_t LockViolationScriptCrash = REBASE(0x75188c8);
-    const uintptr_t luaH_dummynode = REBASE(0x7bf7f90);
-    const uintptr_t luaO_nilobject = REBASE(0x5fc6de8);
-    const uintptr_t luaT_Eventnames = REBASE(0x5ee5b48);
-    const uintptr_t luaT_typenames = REBASE(0x5b98a70);
-    const uintptr_t OpcodeLookupTable = REBASE(0x342b730);
-    const uintptr_t PhysicsSenderMaxBandwidthBps = REBASE(0x782d5f8);
-    const uintptr_t RawScheduler = REBASE(0x7c73e50);
-    const uintptr_t TaskSchedulerTargetFps = REBASE(0x782d5f8);
-    const uintptr_t WndProcessCheck = REBASE(0x703b798);
+    const uintptr_t AppDataInfo = REBASE(0x7bed540);
+    const uintptr_t EnableLoadModule = REBASE(0x70dd300);
+    const uintptr_t IdentityPtr = REBASE(0x7661528);
+    const uintptr_t KTable = REBASE(0x751a7b0);
+    const uintptr_t LockViolationScriptCrash = REBASE(0x7599a88);
+    const uintptr_t luaH_dummynode = REBASE(0x7c79010);
+    const uintptr_t luaO_nilobject = REBASE(0x6032ec0);
+    const uintptr_t luaT_Eventnames = REBASE(0x5f52288);
+    const uintptr_t luaT_typenames = REBASE(0x5c04b90);
+    const uintptr_t OpcodeLookupTable = REBASE(0x3483c9c);
+    const uintptr_t PhysicsSenderMaxBandwidthBps = REBASE(0x78ad438);
+    const uintptr_t RawScheduler = REBASE(0x7cf5400);
+    const uintptr_t TaskSchedulerTargetFps = REBASE(0x78ad438);
+    const uintptr_t WndProcessCheck = REBASE(0x70b6a90);
     } // namespace Pointers
 
     namespace Functions
     {
-    const uintptr_t FireMouseClick = REBASE(0x25abbf0);
-    const uintptr_t FireMouseHoverEnter = REBASE(0x25ad190);
-    const uintptr_t FireMouseHoverLeave = REBASE(0x25ad330);
-    const uintptr_t FireProximityPrompt = REBASE(0x1ab110);
-    const uintptr_t FireRightMouseClick = REBASE(0x25abbf0);
-    const uintptr_t FireTouchInterest = REBASE(0x4724210);
-    const uintptr_t get_capabilities = REBASE(0x44361f0);
-    const uintptr_t GetContextObject = REBASE(0x49c78e3c);
-    const uintptr_t GetCurrentThreadId = REBASE(0x4724210);
-    const uintptr_t GetFFlag = REBASE(0x4734f70);
-    const uintptr_t GetGlobalState = REBASE(0x4a678b0);
-    const uintptr_t GetIdentityStruct = REBASE(0x7fb0);
-    const uintptr_t GetLuaStateForInstance = REBASE(0x1c33f90);
-    const uintptr_t GetProperty = REBASE(0x4724210);
-    const uintptr_t GetRobloxPropertyData = REBASE(0xc62a20);
-    const uintptr_t GetTlsPointer = REBASE(0x7fb0);
-    const uintptr_t HashTableLookup = REBASE(0x1c11fb7);
-    const uintptr_t Impersonator = REBASE(0x44359b0);
-    const uintptr_t InstanceBridge_Push = REBASE(0x1d29e60);
-    const uintptr_t IsLegalSendEvent = REBASE(0xa66010);
-    const uintptr_t lua_xmove = REBASE(0x432e460);
-    const uintptr_t luaA_toobject = REBASE(0x432d320);
-    const uintptr_t luaC_step = REBASE(0x432d260);
-    const uintptr_t luaD_throw = REBASE(0x432f510);
-    const uintptr_t luaf_freeproto = REBASE(0x4b9b9d0);
-    const uintptr_t luaF_newproto = REBASE(0x75ff70);
-    const uintptr_t luaG_runerrorl = REBASE(0x43402b0);
-    const uintptr_t luaL_argerrorl = REBASE(0x4334840);
-    const uintptr_t luaL_checkany = REBASE(0x4369b60);
-    const uintptr_t luaL_checklstring = REBASE(0x4336a10);
-    const uintptr_t luaL_errorl = REBASE(0x4334840);
-    const uintptr_t luaL_newmetatable = REBASE(0x4809260);
-    const uintptr_t luaL_pushresult = REBASE(0x432da90);
-    const uintptr_t luaM_toobig = REBASE(0x4389c90);
-    const uintptr_t luaO_pushfstring = REBASE(0x4348a80);
-    const uintptr_t luaT_objtypename = REBASE(0x43993b0);
-    const uintptr_t Luau_Execute = REBASE(0x4340ab0);
-    const uintptr_t luaV_getimport = REBASE(0x44358f0);
-    const uintptr_t LuaVMLoad = REBASE(0x87e790);
-    const uintptr_t newblock = REBASE(0x4389fc0);
-    const uintptr_t newgcoblock = REBASE(0x4389f20);
-    const uintptr_t Print = REBASE(0x1dea8d0);
-    const uintptr_t pseudotoaddr = REBASE(0x432dbf0);
-    const uintptr_t Register = REBASE(0x2b69ca0);
-    const uintptr_t ScriptContextResume = REBASE(0x1d63290);
-    const uintptr_t TaskDefer = REBASE(0x1578c20);
+    const uintptr_t FireMouseClick = REBASE(0x25f17e0);
+    const uintptr_t FireMouseHoverEnter = REBASE(0x25f2d80);
+    const uintptr_t FireMouseHoverLeave = REBASE(0x25f2f20);
+    const uintptr_t FireProximityPrompt = REBASE(0x1ab5b0);
+    const uintptr_t FireRightMouseClick = REBASE(0x25f17e0);
+    const uintptr_t FireTouchInterest = REBASE(0x4788a30);
+    const uintptr_t get_capabilities = REBASE(0x478ad90);
+    const uintptr_t GetContextObject = REBASE(0x49c8fbfc);
+    const uintptr_t GetCurrentThreadId = REBASE(0x4788a30);
+    const uintptr_t GetFFlag = REBASE(0x4799730);
+    const uintptr_t GetGlobalState = REBASE(0x4acc700);
+    const uintptr_t GetIdentityStruct = REBASE(0x9060);
+    const uintptr_t GetLuaStateForInstance = REBASE(0x1c4bad0);
+    const uintptr_t GetProperty = REBASE(0x4788a30);
+    const uintptr_t GetRobloxPropertyData = REBASE(0xc72e20);
+    const uintptr_t GetTlsPointer = REBASE(0x9060);
+    const uintptr_t HashTableLookup = REBASE(0x1c29920);
+    const uintptr_t Impersonator = REBASE(0x4498820);
+    const uintptr_t InstanceBridge_Push = REBASE(0x1d43290);
+    const uintptr_t IsLegalSendEvent = REBASE(0xa6f750);
+    const uintptr_t luaA_toobject = REBASE(0x43911c0);
+    const uintptr_t luaf_freeproto = REBASE(0x4bfd860);
+    const uintptr_t luaF_newproto = REBASE(0x765d20);
+    const uintptr_t luaM_toobig = REBASE(0x43ef090);
+    const uintptr_t Luau_Execute = REBASE(0x12af390);
+    const uintptr_t LuaVMLoad = REBASE(0x8816e0);
+    const uintptr_t Print = REBASE(0x1e21ad0);
+    const uintptr_t Register = REBASE(0x2bbd720);
+    const uintptr_t ScriptContextResume = REBASE(0x1d7cd20);
+    const uintptr_t TaskDefer = REBASE(0x1588930);
     } // namespace Functions
 
 } // namespace Offsets

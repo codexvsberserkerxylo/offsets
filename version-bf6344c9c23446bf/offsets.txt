@@ -1,0 +1,285 @@
+DATE: 2026-05-09 22:48:38\\
+TIME: 13.784s\\
+VER : version-bf6344c9c23446bf\\
+OK  : 84/138\\
+================================================
+
+[ISPARALLEL]
+  ActorRequired_Call                       0x1d02f80
+  ActorRequired_Prop                       0x1d031a0
+
+[MISC]
+  AppDataInfo                              0x748d0e8
+
+[HYPERION]
+  BitMap                                   0xf9a810
+
+[DATAMODEL]
+  Children                                 0x78
+
+[ISPARALLEL]
+  Connection_Dc                            0x1c51460
+
+[HYPERION]
+  ControlFlowGuard                         0xb7860e
+
+[MISC]
+  // CrashOnDataModelValidationFailure      FAILED (Not found)
+
+[LUAU]
+  currfuncname                             0x470d140
+
+[DATAMODEL]
+  DataModelDeleterPointer                  0x7713f6
+
+[MISC]
+  // DebugCheckRenderThreading              FAILED (Not found)
+
+[TASK]
+  defer                                    0x1d91f00
+  desynchronize                            0x1d92360
+
+[MISC]
+  // DisableCorescriptLoadstring            FAILED (Not found)
+  EnableLoadModule                         0x1d74f60
+
+[ISPARALLEL]
+  Event_Connect                            0x1c50300
+  Event_ConnPar                            0x1c50730
+  Event_Once                               0x1c53f20
+  EventAccess                              0x1cff350
+
+[DATAMODEL]
+  FakeDataModelPointer                     0x749cbd8
+  FakeDataModelToDataModel                 0x1d0
+
+[ISPARALLEL]
+  FilterDescendants                        0x1cc3120
+
+[SIGNALS]
+  // FireMouseClick                         FAILED (Not found)
+  // FireMouseHoverEnter                    FAILED (Not found)
+  // FireMouseHoverLeave                    FAILED (Not found)
+  FireProximityPrompt                      0x5c97a0
+  // FireRightMouseClick                    FAILED (Not found)
+  FireTouchInterest                        0x2a222b0
+
+[MISC]
+  // FlogDataBank                           FAILED (Not found)
+
+[ISPARALLEL]
+  FunctionCall                             0x1d02f80
+
+[DATAMODEL]
+  GameId                                   0x190
+
+[MISC]
+  // gameload                               FAILED (Not found)
+
+[DATAMODEL]
+  // GameLoaded                             FAILED (Not found)
+
+[ROBLOXTHREAD]
+  GetCapabilities                          0x5e50c0
+
+[MISC]
+  GetContextObject                         0x4ab7670
+  GetContextObject2                        0x1c6f330
+  GetCurrentThreadId                       0x4aa0da0
+  GetCurrentThreadId2                      0x49fa680
+  // GetFastFlag                            FAILED (Not found)
+  GetFFlag                                 0x4aec8e0
+  GetGlobalState                           0x50c7440
+  GetGlobalStateForInstance                0x1d57010
+
+[ROBLOXTHREAD]
+  GetIdentityStruct                        0x1d74ed0
+
+[MISC]
+  // GetLuaStateForInstance                 FAILED (Not found)
+
+[PROPERTY]
+  // GetProperty                            FAILED (Not found)
+  GetRobloxPropertyData                    0x1ce8b00
+
+[ROBLOXTHREAD]
+  GetTlsPointer                            0x1c64360
+
+[MISC]
+  // GetValues                              FAILED (Not found)
+
+[RAKNET]
+  // HandleConnectionState                  FAILED (Not found)
+
+[PROPERTY]
+  HashTableLookup                          0x1c17560
+
+[SCRIPTCONTEXT]
+  Identity                                 0xe8
+
+[ROBLOXTHREAD]
+  // IdentityPtr                            FAILED (Not found)
+  Impersonator                             0x5e50c0
+
+[ISPARALLEL]
+  Instance_FromExist                       0x1d5df90
+
+[SCRIPTCONTEXT]
+  // IsCoreScript                           FAILED (Not found)
+
+[INSTANCE]
+  IsLegalSendEvent                         0x9e9240
+
+[PROPERTY]
+  // KTable                                 FAILED (Not found)
+
+[ISPARALLEL]
+  LocalSafe_Call                           0x1d02f80
+  LocalSafe_Write                          0x1d031a0
+
+[MISC]
+  // LockViolationScriptCrash               FAILED (Not found)
+  // LockViolationScriptCrash2              FAILED (Not found)
+
+[LUAU]
+  lua_break                                0x470c620
+  lua_getfield                             0x470e54a
+  // lua_newstate                           FAILED (Not found)
+  // lua_rawcheckstack                      FAILED (Not found)
+  lua_resume                               0x470c670
+  lua_setfield                             0x470a1c0
+  lua_xmove                                0x470d980
+  lua_yield                                0x470c860
+  luaA_toobject                            0x470e54a
+  luaC_step                                0x1db7f90
+  // luaD_reallocstack                      FAILED (Not found)
+  luaF_freeproto                           0x470b710
+  luaG_runerror                            0x1d8a890
+  luaG_runerrorl                           0x472b6a0
+  // luaH_dummynode                         FAILED (Not found)
+  luaL_argerror                            0x5fad0a
+  luaL_argerrorl                           0x1d92df0
+  // luaL_checkany                          FAILED (Not found)
+  luaL_checklstring                        0x470dd30
+  luaL_checkstring                         0x470e54a
+  luaL_checktype                           0x470d980
+  // luaL_error                             FAILED (Not found)
+  // luaL_errorL                            FAILED (Not found)
+  luaL_testudata                           0x4736590
+  luaL_typeerrorl                          0x470e54a
+  luaM_free                                0x472b6a0
+  // luaM_freegco                           FAILED (Not found)
+  luaM_toobig                              0x472b6a0
+  // luaM_visitgco                          FAILED (Not found)
+  // luaO_nilobject                         FAILED (Not found)
+
+[MISC]
+  // LuaStepIntervalMsOverrideEnabled       FAILED (Not found)
+
+[LUAU]
+  luaT_Eventnames                          0x62a8a28
+  luaT_objtypename                         0x470e54a
+  // luaT_typenames                         FAILED (Not found)
+
+[DATAMODEL]
+  Name                                     0xb0
+
+[MISC]
+  newclasspage2                            0x472b7c9
+  // newgcoblock2                           FAILED (Not found)
+  // newpage2                               FAILED (Not found)
+  OpcodeLookupTable                        0x348c790
+  // PhysicsSenderMaxBandwidth              FAILED (Not found)
+
+[BASEPART]
+  Primitive                                0x148
+
+[MISC]
+  Print                                    0x1db7f90
+
+[RAKNET]
+  // ProcessNetworkPacket                   FAILED (Not found)
+
+[PROPERTY]
+  // PropertyDescriptor                     FAILED (Not found)
+
+[ISPARALLEL]
+  PropRead                                 0x1cff350
+  PropWrite                                0x1d031a0
+
+[LUAU]
+  pseudo2addr                              0x4ad0300
+
+[INSTANCE]
+  // push                                   FAILED (Not found)
+  // push2                                  FAILED (Not found)
+
+[MISC]
+  // RawScheduler                           FAILED (Not found)
+  Register                                 0x8283d0
+  // RenderDebugCheckThreading2             FAILED (Not found)
+
+[RAKNET]
+  // ReportNetworkError                     FAILED (Not found)
+
+[MISC]
+  // RequestCode                            FAILED (Not found)
+
+[SCRIPTCONTEXT]
+  // RequireBypass                          FAILED (Not found)
+
+[MISC]
+  RobloxLogCrash                           0x4ab7670
+  // RuntimeCrashOnHang                     FAILED (Not found)
+
+[ISPARALLEL]
+  ScriptConnect                            0x1c50730
+
+[DATAMODEL]
+  ScriptContext                            0x3f0
+
+[MISC]
+  // ScriptContextResume                    FAILED (Not found)
+
+[SCRIPTCONTEXT]
+  ScriptContextToResume                    0x7f0
+
+[RAKNET]
+  // send                                   FAILED (Not found)
+
+[MISC]
+  // SetFastFlag                            FAILED (Not found)
+
+[TASK]
+  spawn                                    0x1d92e50
+
+[LUAU]
+  std_runtime_error                        0x4ad0300
+
+[TASK]
+  synchronize                              0x1d92fd0
+
+[DATAMODEL]
+  // TaskSchedulerPointer                   FAILED (Not found)
+
+[MISC]
+  // TaskSchedulerTargetFps                 FAILED (Not found)
+
+[SCRIPTCONTEXT]
+  Userdata                                 0x100
+
+[MISC]
+  // VariantCastFloat                       FAILED (Not found)
+  // VariantCastInt                         FAILED (Not found)
+  // VariantCastInt64                       FAILED (Not found)
+
+[DATAMODEL]
+  VisualEngine                             0x10
+  VisualEnginePointer                      0x527214
+
+[TASK]
+  wait                                     0x1d931e0
+
+[MISC]
+  // WebSocketServiceEnableClientCreation   FAILED (Not found)
+  WndProcessCheck                          0x7057018

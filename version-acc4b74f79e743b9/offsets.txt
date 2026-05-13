@@ -1,0 +1,425 @@
+DATE: 2026-05-06 22:59:49\\
+TIME: 38.757s\\
+VER : version-acc4b74f79e743b9\\
+OK  : 182/204\\
+================================================
+
+[ISPARALLEL]
+  ActorRequired_Call                       0x1d3c030
+  ActorRequired_Prop                       0x1d3bb60
+
+[MISC]
+  AppDataInfo                              0x7bed540
+
+[LUAU]
+  auxgetinfo                               0x43a8290
+  auxopen                                  0x43ce630
+
+[HYPERION]
+  BitMap                                   0x12730
+
+[LUAU]
+  Bridge_registerClass                     0x1c3ea61
+
+[MISC]
+  CastArgs                                 0x1c54a20
+
+[DATAMODEL]
+  Children                                 0x78
+
+[LUAU]
+  close                                    0x43d1b60
+  close_state                              0x4397da0
+  compress                                 0x1c81750
+
+[ISPARALLEL]
+  Connection_Dc                            0x1c6c840
+
+[MISC]
+  ConnectionDisconnect                     0x47856d0
+
+[HYPERION]
+  ControlFlowGuard                         0xe6cb30
+
+[MISC]
+  CrashOnDataModelValidationFailure        0x1e8c330
+
+[LUAU]
+  create                                   0x43d1420
+  currfuncname                             0x4399390
+
+[DATAMODEL]
+  DataModelDeleterPointer                  0x83b3bc
+
+[MISC]
+  DebugCheckRenderThreading                0x87ce5b
+
+[TASK]
+  defer                                    0x1df9c40
+  defer2                                   0x1588930
+  desynchronize                            0x1df9050
+
+[MISC]
+  // DisableCorescriptLoadstring            FAILED (Not found)
+  EnableLoadModule                         0x70dd300
+
+[LUAU]
+  error_code_check                         0x43b3950
+
+[ISPARALLEL]
+  Event_Connect                            0x1c6b810
+  Event_ConnPar                            0x1c6baa0
+  Event_Once                               0x1c6be8e
+  EventAccess                              0x1d47ee0
+
+[LUAU]
+  f_luaopen                                0x43a8f30
+
+[DATAMODEL]
+  FakeDataModelPointer                     0x7c1a148
+  FakeDataModelToDataModel                 0x1d0
+
+[ISPARALLEL]
+  FilterDescendants                        0x1cf6e60
+
+[SIGNALS]
+  FireMouseClick                           0x25f17e0
+  FireMouseHoverEnter                      0x25f2d80
+  FireMouseHoverLeave                      0x25f2f20
+
+[LUAU]
+  FireProximityPrompt                      0x1ab5b0
+  FireProximityPrompt                      0x2687980
+
+[SIGNALS]
+  FireRightMouseClick                      0x25f17e0
+
+[LUAU]
+  FireTouchInterest                        0x2a36ac0
+  FireTouchInterest                        0x4788a30
+
+[MISC]
+  // FlogDataBank                           FAILED (Not found)
+
+[LUAU]
+  freeblock                                0x43efe60
+  freeclasspage                            0x43efc80
+
+[ISPARALLEL]
+  FunctionCall                             0x1d3c030
+
+[LUAU]
+  functionContainer                        0x1c81600
+
+[DATAMODEL]
+  GameId                                   0x190
+
+[MISC]
+  // gameload                               FAILED (Not found)
+
+[DATAMODEL]
+  // GameLoaded                             FAILED (Not found)
+
+[LUAU]
+  get_capabilites                          0x4499160
+
+[ROBLOXTHREAD]
+  GetCapabilities                          0x478ad90
+
+[MISC]
+  GetContextObject                         0x49c8fbfc
+  GetContextObject2                        0x1c88570
+  GetCurrentThreadId                       0x4788a30
+  GetCurrentThreadId2                      0x46d5940
+  GetFastFlag                              0x479a2f0
+  GetFFlag                                 0x4799730
+  GetGlobalState                           0x4acc700
+  GetGlobalStateForInstance                0x1d4b3c0
+
+[ROBLOXTHREAD]
+  GetIdentityStruct                        0x1dc6140
+
+[LUAU]
+  GetLuaState                              0x1c4c4d0
+
+[MISC]
+  GetLuaStateForInstance                   0x1c4bad0
+
+[LUAU]
+  GetProperty                              0x4789430
+
+[PROPERTY]
+  GetRobloxPropertyData                    0xc72e20
+
+[LUAU]
+  getTaskScheduler                         0x1384f00
+
+[ROBLOXTHREAD]
+  GetTlsPointer                            0x9060
+
+[MISC]
+  // GetValues                              FAILED (Not found)
+
+[RAKNET]
+  HandleConnectionState                    0x134a800
+
+[PROPERTY]
+  HashTableLookup                          0x1c29920
+
+[SCRIPTCONTEXT]
+  Identity                                 0x170
+
+[LUAU]
+  IdentityPtr                              0x7ee1d28
+
+[ROBLOXTHREAD]
+  IdentityPtr_Pointer                      0x7661528
+  Impersonator                             0x478ad90
+
+[LUAU]
+  info                                     0x43c21d0
+
+[ISPARALLEL]
+  Instance_FromExist                       0x1db1640
+
+[SCRIPTCONTEXT]
+  // IsCoreScript                           FAILED (Not found)
+
+[INSTANCE]
+  IsLegalSendEvent                         0xa6f750
+
+[LUAU]
+  isyieldable                              0x43d1b30
+  KTable                                   0x7d9afb0
+
+[PROPERTY]
+  KTable_Pointer                           0x751a7b0
+
+[LUAU]
+  loadLibraryProtected                     0x1d4cce0
+  loadsafe                                 0x43a8f40
+
+[ISPARALLEL]
+  LocalSafe_Call                           0x1d3c030
+  LocalSafe_Write                          0x1d3bb60
+
+[MISC]
+  LockViolationScriptCrash                 0x7599a88
+  // LockViolationScriptCrash2              FAILED (Not found)
+
+[LUAU]
+  lua_newstate                             0x1015fe0
+  lua_pcall                                0x4394320
+  Lua_protect_metatable                    0x1d47b00
+  lua_pushfstringL                         0x4392bd0
+  lua_pushvfstring                         0x4392b60
+  lua_rawcheckstack                        0x4392020
+  lua_xmove                                0x4392340
+  luaA_toobject                            0x4391bc0
+  luaB_xpcallcont                          0x43cfd00
+  luaC_step                                0x43a40c0
+  luaD_growstack                           0x4391d00
+  luaD_rawrunprotected                     0x4394210
+  luaD_throw                               0x4394240
+  luaF_freeproto                           0x43ff010
+  luaF_newproto                            0x43ff020
+  luaG_runerrorl                           0x43a5140
+  luaH_dummynode                           0x7c79010
+  // luaL_argerrorl                         FAILED (Not found)
+  luaL_checklstring                        0x439b230
+  luaL_checktype                           0x4399580
+  luaL_errorl                              0x48a9f00
+  luaL_findtable                           0x48d1ee0
+  luaL_getmetafield                        0x439b2e0
+  luaL_newmetatable                        0x486e550
+  luaL_pushresult                          0x439fdb0
+  luaL_register                            0x2bbe120
+  // luaL_typeerrorl                        FAILED (Not found)
+  luaL_where                               0x43995b0
+  luaM_free                                0x1c528e0
+  luaM_freegco                             0x43effa0
+  luaM_toobig                              0x43ef090
+  luaM_toobig2                             0x43ef090
+  luaM_visitgco                            0x43f00c0
+  luaO_chunkid                             0x4406da0
+  luaO_nilobject                           0x6032ec0
+  luaO_pushfstring                         0x4406d70
+  luaO_pushvfstring                        0x4406670
+  luaopen_base                             0x43ced00
+
+[MISC]
+  // LuaStepIntervalMsOverrideEnabled       FAILED (Not found)
+
+[LUAU]
+  luaT_objtypename                         0x43ff2a0
+  luaT_objtypenamestr                      0x43ff010
+  Luau_Execute                             0x43ade90
+  Luau_Execute_Alt                         0x43ad490
+  luau_load                                0x4395a20
+  luaV_getimport                           0x43a5940
+  luaV_gettable                            0x43a5890
+  luaV_settable                            0x43a5ad0
+  LuaVMLoad                                0x1c82880
+
+[DATAMODEL]
+  Name                                     0xb0
+
+[LUAU]
+  newblock                                 0x43efd10
+  newclasspage                             0x43efc10
+
+[MISC]
+  newclasspage2                            0x43ef349
+
+[LUAU]
+  newgcoblock                              0x43efdc0
+
+[MISC]
+  newgcoblock2                             0x1c4f87f
+
+[LUAU]
+  newpage                                  0x1c41aa0
+
+[MISC]
+  newpage2                                 0x43a5ac8
+
+[LUAU]
+  newproxy                                 0x43ce2c0
+  OpCode                                   0x646de30
+
+[MISC]
+  OpcodeLookupTable                        0x3483c9c
+
+[LUAU]
+  openState                                0x1d4cf90
+  PhysicalPropertiesBridge_registerClass   0x1ce1e00
+
+[MISC]
+  PhysicsSenderMaxBandwidth                0x78ad438
+
+[LUAU]
+  print                                    0x88ebf0
+
+[MISC]
+  Print                                    0x1e21ad0
+
+[RAKNET]
+  ProcessNetworkPacket                     0x134a800
+
+[PROPERTY]
+  // PropertyDescriptor                     FAILED (Not found)
+
+[ISPARALLEL]
+  PropRead                                 0x1d47ee0
+  PropWrite                                0x1d3bb60
+
+[LUAU]
+  pseudo2addr                              0x4391b00
+
+[INSTANCE]
+  push                                     0x1d43290
+  push2                                    0x977960
+
+[LUAU]
+  pushInstance                             0x1d4006d
+  RawScheduler                             0x7cf5400
+  RawScheduler                             0x0
+  readVarInt                               0xa1f1d0
+
+[MISC]
+  Register                                 0x2bbd720
+
+[LUAU]
+  remapUserdataTypes                       0x43a5fd0
+
+[MISC]
+  // RenderDebugCheckThreading2             FAILED (Not found)
+
+[RAKNET]
+  ReportNetworkError                       0xa4fa10
+
+[LUAU]
+  RequestCode                              0x1c4c8d0
+  // RequestCode                            FAILED (Not found)
+
+[SCRIPTCONTEXT]
+  // RequireBypass                          FAILED (Not found)
+
+[LUAU]
+  resume                                   0x1d7d720
+  RobloxLogCrash                           0x4789430
+  running                                  0x43cee54
+
+[MISC]
+  // RuntimeCrashOnHang                     FAILED (Not found)
+
+[LUAU]
+  SandBoxThread                            0x14f9cb
+
+[ISPARALLEL]
+  ScriptConnect                            0x1c6baa0
+
+[DATAMODEL]
+  ScriptContext                            0x3f0
+
+[MISC]
+  ScriptContextResume                      0x1d7cd20
+
+[SCRIPTCONTEXT]
+  ScriptContextToResume                    0x7f0
+
+[RAKNET]
+  send                                     0x3136030
+
+[MISC]
+  // SetFastFlag                            FAILED (Not found)
+
+[TASK]
+  spawn                                    0x1dfa0e0
+  // spawn                                  FAILED (Not found)
+
+[LUAU]
+  startScript                              0x45223c0
+  status                                   0x43d0040
+  std_runtime_error                        0x5ceacd
+
+[TASK]
+  synchronize                              0x1df8b1e
+  // synchronize2                           FAILED (Not found)
+
+[DATAMODEL]
+  // TaskSchedulerPointer                   FAILED (Not found)
+
+[MISC]
+  TaskSchedulerTargetFps                   0x78ad438
+
+[LUAU]
+  tostring                                 0x1d08af2
+  traceback                                0x43a8490
+
+[SCRIPTCONTEXT]
+  Userdata                                 0x1d0
+
+[MISC]
+  // VariantCastFloat                       FAILED (Not found)
+  // VariantCastInt                         FAILED (Not found)
+  // VariantCastInt64                       FAILED (Not found)
+
+[LUAU]
+  Vector2Bridge_registerClass              0x1d12720
+  Vector3Bridge_registerClass              0x1d0ff00
+
+[DATAMODEL]
+  VisualEngine                             0x10
+  VisualEnginePointer                      0x5f2364
+
+[TASK]
+  wait                                     0x1dfa6d9
+
+[MISC]
+  WebSocketServiceEnableClientCreation     0x440af5
+  WndProcessCheck                          0x70b6a90
+
+[LUAU]
+  wrap                                     0x43d18e0
+  yield                                    0x43d1a70

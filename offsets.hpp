@@ -1,6 +1,6 @@
 // dumped by nick \\
-// date: 2026-05-13 13:31:25 \\
-// took 14.0s \\
+// date: 2026-05-14 22:22:48 \\
+// took 14.9s \\
 
 #pragma once
 #include <cstdint>
@@ -15,20 +15,20 @@ static const uintptr_t Hyperion_Base = reinterpret_cast<uintptr_t>(GetModuleHand
 namespace Offsets
 {
     inline constexpr const char* LiveChannel = "version-ec412128eba3476e";
+	
+	namespace hyperion
+	{
+    	static constexpr uintptr_t ControlFlowGuard = HYP_REBASE(0xac2b20);
+    	static constexpr uintptr_t BitMap = HYP_REBASE(0x11ae918);
 
-    namespace Hyperion
-    {
-        static constexpr uintptr_t ControlFlowGuard = HYP_REBASE(0xac2b20);
-        static constexpr uintptr_t BitMap = HYP_REBASE(0x11ae918);
-
-        enum Offsets    {
+   		enum Offsets    {
             ByteShift = 15,   // 0xf
             PageShift = 12,   // 0xc
             BitMask   = 7,   // 0x7
             PageSize  = 0x1000,  // 4096
             PageMask  = 0xfff   // 4095
-        };
-	} // namespace Hyperion
+    	};
+	} // namespace hyperion
 
     namespace DataModel
     {
@@ -65,6 +65,7 @@ namespace Offsets
 
     namespace Instance
     {
+		const uintptr_t NiggaNiggaSahur67 = REBASE(0x6767) // ud real +rep im tuff
     } // namespace Instance
 
     namespace Property
@@ -101,11 +102,11 @@ namespace Offsets
         const uintptr_t luaB_tostring = REBASE(0x475f150);
         const uintptr_t luaB_type = REBASE(0x475ef50);
         const uintptr_t luaB_typeof = REBASE(0x475ef90);
-        const uintptr_t luaC_step = REBASE(0x1dd05b0);
         const uintptr_t luaC_step = REBASE(0x474f580);
         const uintptr_t luaF_freeproto = REBASE(0x474a150);
         const uintptr_t luaG_runerror = REBASE(0x1da2eb0);
         const uintptr_t luaG_runerrorl = REBASE(0x476ba60);
+        const uintptr_t luaL_argerror = REBASE(0x5fe610);
         const uintptr_t luaL_argerrorl = REBASE(0x1dab410);
         const uintptr_t luaL_checkstring = REBASE(0x474cfaa);
         const uintptr_t luaL_checktype = REBASE(0x474c3e0);
@@ -122,13 +123,15 @@ namespace Offsets
         const uintptr_t std_runtime_error = REBASE(0x4b0db40);
     } // namespace Luau
 
-    namespace Task
+    namespace Task // i confirmed in ida
     {
-        const uintptr_t defer = REBASE(0x1daa564);
-        const uintptr_t desynchronize = REBASE(0x1daa980);
+        const uintptr_t defer = REBASE(0x1daa520);
         const uintptr_t spawn = REBASE(0x1dab470);
+		const uintptr_t delay = REBASE(0x1daa980);
         const uintptr_t synchronize = REBASE(0x1dab5f0);
+		const uintptr_t desynchronize = REBASE(0x1daabc0);
         const uintptr_t wait = REBASE(0x1dab800);
+		const uintptr_t cancel = REBASE(0x1daa210);
     } // namespace Task
 
     namespace Signals
@@ -168,7 +171,7 @@ namespace Offsets
     const uintptr_t GetGlobalStateForInstance = REBASE(0x1d6f300);
     const uintptr_t newclasspage2 = REBASE(0x476bb89);
     const uintptr_t OpcodeLookupTable = REBASE(0x34ae732);
-    const uintptr_t Print = REBASE(0x1dd05b0);
+    const uintptr_t Print = REBASE(0x1dd05b0); // ud
     const uintptr_t Register = REBASE(0x82b870);
     const uintptr_t RobloxLogCrash = REBASE(0x4af4eb0);
     const uintptr_t WndProcessCheck = REBASE(0x70ad018);

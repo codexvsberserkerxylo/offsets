@@ -1,14 +1,14 @@
 // dumped by nick (hypdumper) \\
-// date: 2026-05-18 05:59:19 \\
-// took 0.301s \\
+// date: 2026-05-13 01:43:56 \\
+// took 0.312s \\
 
 #pragma once
 #include <cstdint>
 
 namespace Hyperion
 {
-    static constexpr uintptr_t ControlFlowGuard = 0x75cfc0;
-    static constexpr uintptr_t BitMap = 0x1d26b8;
+    static constexpr uintptr_t ControlFlowGuard = 0xac2b20;
+    static constexpr uintptr_t BitMap = 0x11ae918;
 
     enum Offsets    {
         ByteShift = 15,   // 0xf

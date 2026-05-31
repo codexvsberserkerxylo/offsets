@@ -26,7 +26,7 @@ const uintptr_t task.desynchronize = task.desynchronize() may only be called fro
 const uintptr_t task.synchronize = task.synchronize() may only be called from a script that is a descendant of an Actor
 const uintptr_t task.wait = task.wait is not available for AuroraScripts
 
-// other method for task lib (wayy better tbh)
+// OUTDATED task lib
 /*
  * showcased version: version-ec412128eba3476e
  * 

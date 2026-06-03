@@ -1,9 +1,8 @@
 #pragma once
 #include <string>
-// roblox version=version-ad5d3e2906444472
+// roblox version=version-a182ba0d4c6f483b
 // list rva=0x8100E00
 // fflags:13389
-
 namespace FFlags
 {
 	uintptr_t FFlagList = 0x8100E00;

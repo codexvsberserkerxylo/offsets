@@ -1,6 +1,6 @@
 // dumped by nick \\
-// date: 2026-06-10 07:03:10 \\
-// took 13.2s \\
+// date: 2026-06-04 16:58:14 \\
+// took 13.3s \\
 
 #pragma once
 #include <cstdint>
@@ -14,7 +14,7 @@ static const uintptr_t hyperion_base = reinterpret_cast<uintptr_t>(GetModuleHand
 
 namespace Offsets
 {
-    inline constexpr const char* LiveChannel = "version-76173e47a79145c7";
+    inline constexpr const char* LiveChannel = "version-ad5d3e2906444472";
 
     namespace DataModel
     {

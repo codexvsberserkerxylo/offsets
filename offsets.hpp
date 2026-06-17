@@ -14,7 +14,7 @@ static const uintptr_t hyperion_base = reinterpret_cast<uintptr_t>(GetModuleHand
 
 namespace Offsets
 {
-    inline constexpr const char* LiveChannel = "version-76173e47a79145c7";
+    inline constexpr const char* LiveChannel = "version-8884371d30284041";
 
     namespace DataModel
     {

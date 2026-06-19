@@ -19,7 +19,7 @@ namespace Hyperion
     };
 } // namespace Hyperion
 
-namespace checks
-{
-    static constexpr uintptr_t patcheb = 0x3f033c
-}
+static const uint64_t patcheb[] = {
+    0x3f033c, 0x4512ab, 0x479d84, 0x48657c, 0x4cead0, 
+    0xbccc28, 0xde6868, 0x119f480
+}; // patcheb

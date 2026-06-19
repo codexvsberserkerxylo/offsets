@@ -1,8 +1,7 @@
-// dumped by nick \\
-// date: 2026-06-17 21:29:26 \\
-// took 15.4s \\
+// dumped by nick
+// date: 2026-06-19 11:23:13
+// took 14.6s
 
-#pragma once
 #include <cstdint>
 #include <Windows.h>
 
@@ -11,6 +10,115 @@ static const uintptr_t hyperion_base = reinterpret_cast<uintptr_t>(GetModuleHand
 
 #define REBASE(x) ((x) + roblox_base)
 #define HYP_REBASE(x) ((x) + hyperion_base)
+
+enum ReflectionType : uint32_t
+{
+    Void = 0x0,
+    Bool = 0x1,
+    Int = 0x2,
+    Int64 = 0x3,
+    Float = 0x4,
+    Double = 0x5,
+    String = 0x6,
+    ProtectedString = 0x7,
+    Instance = 0x8,
+    Instances = 0x9,
+    Ray = 0xa,
+    Vector2 = 0xb,
+    Vector3 = 0xc,
+    Vector2Int16 = 0xd,
+    Vector3Int16 = 0xe,
+    Rect2d = 0xf,
+    CoordinateFrame = 0x10,
+    Color3 = 0x11,
+    Color3uint8 = 0x12,
+    UDim = 0x13,
+    UDim2 = 0x14,
+    Faces = 0x15,
+    Axes = 0x16,
+    Region3 = 0x17,
+    Region3Int16 = 0x18,
+    CellId = 0x19,
+    GuidData = 0x1a,
+    PhysicalProperties = 0x1b,
+    BrickColor = 0x1c,
+    SystemAddress = 0x1d,
+    BinaryString = 0x1e,
+    Surface = 0x1f,
+    CollectionHandle = 0x20,
+    Enum = 0x21,
+    Property = 0x22,
+    Tuple = 0x23,
+    ValueArray = 0x24,
+    ValueTable = 0x25,
+    ValueMap = 0x26,
+    Variant = 0x27,
+    GenericFunction = 0x28,
+    WeakFunctionRef = 0x29,
+    ColorSequence = 0x2a,
+    ColorSequenceKeypoint = 0x2b,
+    NumberRange = 0x2c,
+    NumberSequence = 0x2d,
+    NumberSequenceKeypoint = 0x2e,
+    InputObject = 0x2f,
+    Connection = 0x30,
+    ContentId = 0x31,
+    DescribedBase = 0x32,
+    RefType = 0x33,
+    QFont = 0x34,
+    QDir = 0x35,
+    EventInstance = 0x36,
+    TweenInfo = 0x37,
+    DockWidgetPluginGuiInfo = 0x38,
+    PluginDrag = 0x39,
+    Random = 0x3a,
+    PathWaypoint = 0x3b,
+    FloatCurveKey = 0x3c,
+    RotationCurveKey = 0x3d,
+    ValueCurveKey = 0x3e,
+    SharedString = 0x3f,
+    DateTime = 0x40,
+    RaycastParams = 0x41,
+    RaycastResult = 0x42,
+    OverlapParams = 0x43,
+    LazyTable = 0x44,
+    DebugTable = 0x45,
+    CatalogSearchParams = 0x46,
+    OptionalCoordinateFrame = 0x47,
+    CSGPropertyData = 0x48,
+    UniqueId = 0x49,
+    Font = 0x4a,
+    SharedTable = 0x4b,
+    SharedTableIterator = 0x4c,
+    AnimationMask = 0x4d,
+    AnimationPose = 0x4e,
+    ClipEvaluator = 0x4f,
+    OpenCloudModel = 0x50,
+    InstanceRef = 0x51,
+    SecurityCapabilities = 0x52,
+    ArticulatedJoint = 0x53,
+    AnimationContext = 0x54,
+    Secret = 0x55,
+    Buffer = 0x56,
+    Integer = 0x57,
+    Path2DControlPoint = 0x58,
+    ReplicationPV = 0x59,
+    FacsReplicationData = 0x5a,
+    AnimationMaskModifier = 0x5b,
+    Content = 0x5c,
+    NetAssetHandle = 0x5d,
+    NetAssetRef = 0x5e,
+    Object = 0x5f,
+    AdReward = 0x60,
+    AssetContentMap = 0x61,
+    SlimReplicationData = 0x62,
+    User = 0x63,
+    WebViewParams = 0x64,
+    AnimTrackPlayState = 0x65,
+    AnimTrackMetadata = 0x66,
+    AnimTrackWeight = 0x67,
+    Max = 0x68,
+}; // enum ReflectionType
 
 namespace Offsets
 {
@@ -26,6 +134,12 @@ namespace Offsets
         inline constexpr uint32_t PageSize = 0x1000;
         inline constexpr uint32_t PageMask = 0xfff;
         inline constexpr uint8_t BitMask = 7;
+
+        // other
+        static const uint64_t patcheb[] = {
+            0x3f033c, 0x4512ab, 0x479d84, 0x48657c, 0x4cead0, 
+            0xbccc28, 0xde6868, 0x119f480
+        };
     } // namespace Hyperion
 
     namespace DataModel
@@ -50,7 +164,7 @@ namespace Offsets
 
     namespace BasePart
     {
-        inline constexpr uintptr_t Overlap = 0x1f8;
+        inline constexpr uintptr_t Overlap = 0x1f0;
         inline constexpr uintptr_t Primitive = 0x148;
     } // namespace BasePart
 
@@ -140,7 +254,7 @@ namespace Offsets
         const uintptr_t luaF_freeproto = REBASE(0x469bd70);
         const uintptr_t luaF_newlclosure = REBASE(0x469c050);
         const uintptr_t luaF_newproto = REBASE(0x469c100);
-        const uintptr_t luaG_runerror = REBASE(0x1e8d750);
+        const uintptr_t luaG_runerror = REBASE(0x1e8d520);
         const uintptr_t luaG_runerrorl = REBASE(0x4674b10);
         const uintptr_t luaH_new = REBASE(0x4694b10);
         const uintptr_t luaL_argerrorl = REBASE(0x1e9e480);
@@ -162,6 +276,7 @@ namespace Offsets
         const uintptr_t luaT_typenames = REBASE(0x5d6b2c8);
         const uintptr_t luaV_gettable = REBASE(0x469dce0);
         const uintptr_t newgcoblock = REBASE(0x4692c80);
+        const uintptr_t Print = REBASE(0x1edba40);
         const uintptr_t pseudo2addr = REBASE(0x4af2d80);
         const uintptr_t pusherror = REBASE(0x466f4c0);
     } // namespace Luau
@@ -182,6 +297,14 @@ namespace Offsets
         const uintptr_t create = REBASE(0x4686bc0);
     } // namespace Coroutine
 
+    namespace Raknet
+    {
+        const uintptr_t send = REBASE(0x0) // failed
+        const uintptr_t reportnetworkerror = REBASE(0x0) // failed
+        const uintptr_t processnetworkpacket = REBASE(0x0) // failed
+        const uintptr_t handleconnectionstate = REBASE(0x0) // failed
+    } // namespace Raknet
+
     namespace Signals
     {
         const uintptr_t FireLeftMouseClick = REBASE(0x26709b0);
@@ -194,7 +317,7 @@ namespace Offsets
     namespace IsParallel
     {
         const uintptr_t ActorRequired_Call = REBASE(0x1d48b80);
-        const uintptr_t ActorRequired_Prop = REBASE(0x1d48dc6);
+        const uintptr_t ActorRequired_Prop = REBASE(0x1d48da0);
         const uintptr_t Connection_Dc = REBASE(0x1d64220);
         const uintptr_t Event_Connect = REBASE(0x1d630d0);
         const uintptr_t Event_ConnPar = REBASE(0x1d63500);
@@ -204,13 +327,13 @@ namespace Offsets
         const uintptr_t FunctionCall = REBASE(0x1d48b80);
         const uintptr_t Instance_FromExist = REBASE(0x1e0d600);
         const uintptr_t LocalSafe_Call = REBASE(0x1d48b80);
-        const uintptr_t LocalSafe_Write = REBASE(0x1d48dc6);
+        const uintptr_t LocalSafe_Write = REBASE(0x1d48da0);
         const uintptr_t PropRead = REBASE(0x1d44a80);
-        const uintptr_t PropWrite = REBASE(0x1d48dc6);
+        const uintptr_t PropWrite = REBASE(0x1d48da0);
         const uintptr_t ScriptConnect = REBASE(0x1d63500);
     } // namespace IsParallel
 
-    // misc
+    // other
     const uintptr_t atomic = REBASE(0x4675550);
     const uintptr_t AttachRobloxExtraSpace = REBASE(0x1d8bb80);
     const uintptr_t closestate = REBASE(0x466f400);
@@ -223,7 +346,6 @@ namespace Offsets
     const uintptr_t loadsafe = REBASE(0x4677b00);
     const uintptr_t markroot = REBASE(0x4676620);
     const uintptr_t OpcodeLookupTable = REBASE(0x3449440);
-    const uintptr_t Print = REBASE(0x1edba40);
     const uintptr_t RobloxLogCrash = REBASE(0x4ada0b0);
     const uintptr_t traversetable = REBASE(0x4677480);
     const uintptr_t WndProcessCheck = REBASE(0x7776010);

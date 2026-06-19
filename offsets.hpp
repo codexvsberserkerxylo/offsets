@@ -1,6 +1,6 @@
 // dumped by nick
-// date: 2026-06-19 11:23:13
-// took 14.6s
+// date: 2026-06-19 12:12:02
+// took 11.3s
 
 #include <cstdint>
 #include <Windows.h>
@@ -9,7 +9,7 @@ static const uintptr_t roblox_base = reinterpret_cast<uintptr_t>(GetModuleHandle
 static const uintptr_t hyperion_base = reinterpret_cast<uintptr_t>(GetModuleHandleA("RobloxPlayerBeta.dll"));
 
 #define REBASE(x) ((x) + roblox_base)
-#define HYP_REBASE(x) ((x) + hyperion_base)
+#define HREBASE(x) ((x) + hyperion_base)
 
 enum ReflectionType : uint32_t
 {
@@ -126,8 +126,8 @@ namespace Offsets
 
     namespace Hyperion
     {
-        const uintptr_t BitMap = HYP_REBASE(0x14afd40);
-        const uintptr_t ControlFlowGuard = HYP_REBASE(0x2c820);
+        const uintptr_t BitMap = HREBASE(0x14afd40);
+        const uintptr_t ControlFlowGuard = HREBASE(0x2c820);
 
         inline constexpr uint8_t ByteShift = 15;
         inline constexpr uint8_t PageShift = 12;
@@ -159,7 +159,6 @@ namespace Offsets
     namespace ScriptContext
     {
         inline constexpr uintptr_t RequireBypass = 0x1a8;
-        inline constexpr uintptr_t RequireBypass = 0x851;
     } // namespace ScriptContext
 
     namespace BasePart
@@ -222,12 +221,16 @@ namespace Offsets
     {
         const uintptr_t currfuncname = REBASE(0x1d291f0);
         const uintptr_t f_luaopen = REBASE(0x46719f0);
+        const uintptr_t lua_break = REBASE(0x4671aa0);
+        const uintptr_t lua_clock = REBASE(0x467617a);
         const uintptr_t lua_exception = REBASE(0x4670a40);
         const uintptr_t lua_getfield = REBASE(0x4673dc0);
+        const uintptr_t lua_newstate = REBASE(0x466fa70);
         const uintptr_t lua_pushfstringL = REBASE(0x466cbb0);
         const uintptr_t lua_pushvfstring = REBASE(0x466d2b0);
         const uintptr_t lua_resetthread = REBASE(0x46708f0);
         const uintptr_t lua_xmove = REBASE(0x4672e80);
+        const uintptr_t lua_yield = REBASE(0x4671d00);
         const uintptr_t luaA_toobject = REBASE(0x4673dc0);
         const uintptr_t luaB_assert = REBASE(0x46861e0);
         const uintptr_t luaB_error = REBASE(0x4685ca0);
@@ -256,6 +259,7 @@ namespace Offsets
         const uintptr_t luaF_newproto = REBASE(0x469c100);
         const uintptr_t luaG_runerror = REBASE(0x1e8d520);
         const uintptr_t luaG_runerrorl = REBASE(0x4674b10);
+        const uintptr_t luaH_dummynode = REBASE(0x4684356);
         const uintptr_t luaH_new = REBASE(0x4694b10);
         const uintptr_t luaL_argerrorl = REBASE(0x1e9e480);
         const uintptr_t luaL_checkstring = REBASE(0x4673dc0);
@@ -269,10 +273,10 @@ namespace Offsets
         const uintptr_t luaM_freegco = REBASE(0x4692bb0);
         const uintptr_t luaM_visitgco = REBASE(0x4692500);
         const uintptr_t luaO_chunkid = REBASE(0x46a2050);
+        const uintptr_t luaO_nilobject = REBASE(0x466b344);
         const uintptr_t luaopen_math = REBASE(0x468fd90);
         const uintptr_t luaT_eventnames = REBASE(0x68fcb28);
         const uintptr_t luaT_init = REBASE(0x4692f90);
-        const uintptr_t luaT_objtypename = REBASE(0x4673dc0);
         const uintptr_t luaT_typenames = REBASE(0x5d6b2c8);
         const uintptr_t luaV_gettable = REBASE(0x469dce0);
         const uintptr_t newgcoblock = REBASE(0x4692c80);
@@ -296,14 +300,6 @@ namespace Offsets
         const uintptr_t close = REBASE(0x4686ce0);
         const uintptr_t create = REBASE(0x4686bc0);
     } // namespace Coroutine
-
-    namespace Raknet
-    {
-        const uintptr_t send = REBASE(0x0) // failed
-        const uintptr_t reportnetworkerror = REBASE(0x0) // failed
-        const uintptr_t processnetworkpacket = REBASE(0x0) // failed
-        const uintptr_t handleconnectionstate = REBASE(0x0) // failed
-    } // namespace Raknet
 
     namespace Signals
     {
@@ -341,7 +337,6 @@ namespace Offsets
     const uintptr_t GetContextObject = REBASE(0x1d6d3e0);
     const uintptr_t GetCurrentThreadId = REBASE(0x4ac34c0);
     const uintptr_t GetFFlag = REBASE(0x4b0f990);
-    const uintptr_t GetGlobalState = REBASE(0x1d6d3e0);
     const uintptr_t GetGlobalStateForInstance = REBASE(0x1e5d240);
     const uintptr_t loadsafe = REBASE(0x4677b00);
     const uintptr_t markroot = REBASE(0x4676620);

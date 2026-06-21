@@ -1,6 +1,6 @@
 // dumped by nick
-// date: 2026-06-20 01:58:30
-// took 10.9s
+// date: 2026-06-21 19:39:20
+// took 12.8s
 // success rate: 100%
 
 #include <cstdint>
@@ -153,6 +153,7 @@ namespace Offsets
     {
         inline constexpr uintptr_t RequireBypass = 0x1a8;
         const uintptr_t Resume = REBASE(0x1e2dbf0);
+        inline constexpr uintptr_t ScriptContextToResume = 0x7f8;
     } // namespace ScriptContext
 
     namespace BasePart
@@ -195,27 +196,30 @@ namespace Offsets
         inline constexpr uintptr_t JobsEnd = 0x1b0;
         inline constexpr uintptr_t JobsStart = 0xc8;
         inline constexpr uintptr_t MaxFps = 0x1d0;
-        const uintptr_t Pointer = REBASE(0x815C668);
+        const uintptr_t Pointer = REBASE(0x815C668); // failed but got it myself
         const uintptr_t RawScheduler = REBASE(0x779c5d0);
         const uintptr_t TaskSchedulerTargetFps = REBASE(0x6946868);
     } // namespace TaskScheduler
 
     namespace Instance
     {
+        inline constexpr uintptr_t ClassDescriptor = 0x18;
+        const uintptr_t GetProperty = REBASE(0xc7a740);
         const uintptr_t Push = REBASE(0x1d4fbb0);
     } // namespace Instance
 
     namespace Property
     {
         const uintptr_t HashTableLookup = REBASE(0x1d11000);
+        const uintptr_t KTable = REBASE(0x815e140);
     } // namespace Property
 
     namespace Raknet
     {
-        const uintptr_t HandleConnectionState = REBASE(0xa4b330);
+        const uintptr_t HandleConnectionState = REBASE(0xa4b3d0);
         const uintptr_t ProcessNetworkPacket = REBASE(0x31b84b0);
         const uintptr_t ReportNetworkError = REBASE(0xa40330);
-        const uintptr_t Send = REBASE(0x3100fd0);
+        const uintptr_t Send = REBASE(0x3101030);
     } // namespace Raknet
 
     namespace Luau
@@ -258,7 +262,7 @@ namespace Offsets
         const uintptr_t luaF_freeproto = REBASE(0x469bd70);
         const uintptr_t luaF_newlclosure = REBASE(0x469c050);
         const uintptr_t luaF_newproto = REBASE(0x469c100);
-        const uintptr_t luaG_runerror = REBASE(0x1e8d520);
+        const uintptr_t luaG_runerror = REBASE(0x1e8d750);
         const uintptr_t luaG_runerrorl = REBASE(0x4674b10);
         const uintptr_t luaH_dummynode = REBASE(0x4684340);
         const uintptr_t luaH_new = REBASE(0x4694b10);
@@ -286,7 +290,7 @@ namespace Offsets
         const uintptr_t luaT_typenames = REBASE(0x5d6b2c8);
         const uintptr_t luaV_gettable = REBASE(0x469dce0);
         const uintptr_t luaV_settable = REBASE(0x469e1f0);
-        const uintptr_t luaVM_load = REBASE(0x4677840);
+        const uintptr_t luaVM_load = REBASE(0x32201e0);
         const uintptr_t newgcoblock = REBASE(0x4692c80);
         const uintptr_t print = REBASE(0x1edba40);
         const uintptr_t pseudo2addr = REBASE(0x4af2d80);
@@ -321,7 +325,7 @@ namespace Offsets
     namespace IsParallel
     {
         const uintptr_t ActorRequired_Call = REBASE(0x1d48b80);
-        const uintptr_t ActorRequired_Prop = REBASE(0x1d48da0);
+        const uintptr_t ActorRequired_Prop = REBASE(0x1d48dc6);
         const uintptr_t Connection_Disconnect = REBASE(0x1d64220);
         const uintptr_t Event_Connect = REBASE(0x1d630d0);
         const uintptr_t Event_ConnectParallel = REBASE(0x1d63500);
@@ -331,20 +335,23 @@ namespace Offsets
         const uintptr_t FunctionCall = REBASE(0x1d48b80);
         const uintptr_t Instance_fromExisting = REBASE(0x1e0d600);
         const uintptr_t LocalSafe_Call = REBASE(0x1d48b80);
-        const uintptr_t LocalSafe_Write = REBASE(0x1d48da0);
+        const uintptr_t LocalSafe_Write = REBASE(0x1d48dc6);
         const uintptr_t PropertyRead = REBASE(0x1d44a80);
-        const uintptr_t PropertyWrite = REBASE(0x1d48da0);
+        const uintptr_t PropertyWrite = REBASE(0x1d48dc6);
         const uintptr_t ScriptConnect = REBASE(0x1d63500);
     } // namespace IsParallel
 
     // other
     const uintptr_t atomic = REBASE(0x4675550);
     const uintptr_t AttachRobloxExtraSpace = REBASE(0x1d8bb80);
+    const uintptr_t CastArgs = REBASE(0x1D3D030); // failed but got it myself in ida so here gng
     const uintptr_t closestate = REBASE(0x466f400);
+    const uintptr_t ConnectionDisconnect = REBASE(0x4adef90);
     const uintptr_t EnableLoadModule = REBASE(0x1e77f30);
+    const uintptr_t GetCapabilities = REBASE(0x46d0fd0);
     const uintptr_t GetContextObject = REBASE(0x1d6d3e0);
     const uintptr_t GetCurrentThreadId = REBASE(0x4ac34c0);
-    const uintptr_t GetFFlag = REBASE(0x2c9470);
+    const uintptr_t GetFFlag = REBASE(0x2c9690);
     const uintptr_t GetGlobalState = REBASE(0x1d6d3e0);
     const uintptr_t GetGlobalStateForInstance = REBASE(0x1d58e60);
     const uintptr_t loadsafe = REBASE(0x4677b00);
@@ -353,7 +360,8 @@ namespace Offsets
     const uintptr_t LuaStepIntervalMsOverrideEnabled = REBASE(0x5e59728);
     const uintptr_t markroot = REBASE(0x4676620);
     const uintptr_t OpcodeLookupTable = REBASE(0x3449440);
-    const uintptr_t Register = REBASE(0x2c49c90);
+    const uintptr_t PhysicsSenderMaxBandwidthBps = REBASE(0x5cf36a0);
+    const uintptr_t Register = REBASE(0x2c49f50);
     const uintptr_t RobloxLogCrash = REBASE(0x4ada0b0);
     const uintptr_t SetFFlag = REBASE(0x4b05ef0);
     const uintptr_t traversetable = REBASE(0x4677480);

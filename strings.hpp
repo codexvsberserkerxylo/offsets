@@ -13,19 +13,80 @@ const uintptr_t LockViolationInstanceCrash =  LockViolationInstanceCrash
 const uintptr_t luaH_dummynode = Attempt to migrate WeakObjectRef across VM boundary
 const uintptr_t TaskSchedulerTargetFps = TaskSchedulerTargetFps
 const uintptr_t OpcodeLookupTable = ; R%d: %s%s from %d to %d
-const uintptr_t FireTouchInterest = new overlap in different world 
+const uintptr_t FireTouchInterest = new overlap in different world
 const uintptr_t GetGlobalState = Script Start
 const uintptr_t GetFFlag = _DataCenterFilter
 
-// some new ones
-const uintptr_t Print = Breakpoint %s:%d ignored: %s
+// some new ones (tested on version-5cf2272675e145f5) and got every single one by MYSELF btw
+const uintptr_t print = Breakpoint %s:%d ignored: %s
+const uintptr_t luaL_register = name conflict for module '%s'
+const uintptr_t luaH_dummynode = "{\"type\":\"table\",\"cat\":%d,\"size\":%d" // can use ,\"pairs\":[ and \"%p\" and ,\"metatable\": and more too
+const uintptr_t overlap = new overlap in different world // look for a number, convert it to hex
+const uintptr_t Register = Local player already exists
+const uintptr_t RobloxLogCrash = Invalid Facet Access
+const uintptr_t coroutine.close = cannot close %s coroutine
+const uintptr_t luaB_newproxy = nil or boolean
+const uintptr_t luaB_pcallrun = xpcall
+const uintptr_t luaB_pcall = pcall
+const uintptr_t luaB_setmetatable = cannot change a protected metatable
+const uintptr_t luaB_setfenv = 'setfenv' cannot change environment of given object
+const uintptr_t luaB_tonumber = base out of range
+const uintptr_t luaB_rawlen = table or string expected
+const uintptr_t luaB_getmetatable = __metatable // func at xref
+const uintptr_t luaL_getmetafield = __metatable // first call in func
+const uintptr_t luaopen_base = xpcall
+const uintptr_t luaB_assert = assertion failed!
+const uintptr_t lua_pushfstringL = %s: bytecode version mismatch (expected [%d..%d], got %d) // call after xref
+const uintptr_t luaV_gettable = '__index' chain too long; possible loop
+const uintptr_t luaV_settable = '__newindex' chain too long; possible loop
+const uintptr_t lua_break = attempt to break across metamethod/C-call boundary
+const uintptr_t lua_yield = attempt to yield across metamethod/C-call boundary
+const uintptr_t luaG_runerrorl = '__index' chain too long; possible loop // call after xref
+const uintptr_t luaopen_math = sqrt2 // func at xre´f
+const uintptr_t lua_setfield = sqrt2 // call after xref
+const uintptr_t luaL_typeerrorL = invalid argument #%d to '%s' (%s expected, got %s)
+const uintptr_t luaL_argerrorl = invalid argument #%d to '%s' (%s)
+const uintptr_t pusherror = error in error handling // func at xref
+const uintptr_t f_luaopen = error in error handling // second func at xref
+// because im feeling extra generous:
+// convert JobName, ClassDescriptor, JobsEnd, MaxFps, JobsStart, ScriptContextToResume to hex via pressing H on it while having it selected (ida)
+const uintptr_t InstancePush = Binding does not exist // figure it out yourself, not that hard
+const uintptr_t ClassDescriptor = Could not find property descriptor // figure it out yourslelf
+const uintptr_t GetProperty = Could not find property descriptor // figure it out yourself
+const uintptr_t JobName = HumanoidParallelManagerTaskQueue // 3rd qword in func
+const uintptr_t RawScheduler = HumanoidParallelManagerTaskQueue // dword before xref
+const uintptr_t MaxFps = Out of arbiter nodes: Increase the FInt::TaskSchedulerMaxNumOfArbiters value // figure it out
+const uintptr_t TaskSchedulerPointer = Out of arbiter nodes: Increase the FInt::TaskSchedulerMaxNumOfArbiters value // figure it out
+const uintptr_t JobsEnd = Out of arbiter nodes: Increase the FInt::TaskSchedulerMaxNumOfArbiters value // figure it out
+const uintptr_t JobsStart = TaskScheduler // 2nd qword in func i think 
+const uintptr_t ScriptContextResume = "Can't resume script in this context" // func at xref
+const uintptr_t ScriptContextToResume = "Can't resume script in this context" // hard but u can figure it out gng
+// hyperion shit, figure it out yourself 
+const uintptr_t BitMap = 0x7fffffffffff // constant in RobloxPlayerBeta.dll
+const uintptr_t ControlFlowGuard = 0x7fffffffffff // constant in RobloxPlayerBeta.dll
+// unsure ones:
+const uintptr_t SetFFlag = [FLog::ResetFilters] ApplyFilteredVariables resetting {} to {} // i think
+const uintptr_t RequireBypass = "^([1-9]\\d{0,2})(\\%c\\d{3}){1,}(\\%c\\d+)?(?!\\d|(\\,|\\.)\\d+)" // i think
+const uintptr_t GetFFlag = GetFFlag // i think
+const uintptr_t WndProcessCheck = WndProcessCheck // i think
+const uintptr_t LuaStepIntervalMsOverrideEnabled = LuaStepIntervalMsOverrideEnabled // i think
+const uintptr_t PhysicsSenderMaxBandwidthBps = PhysicsSenderMaxBandwidthBps // i think
+const uintptr_t WebSocketServiceEnableClientCreation = WebSocketServiceEnableClientCreation // i think
+const uintptr_t LockViolationScriptCrash = LockViolationScriptCrash // i think
 
+// raknet (tested on version-5cf2272675e145f5) because im feeling nice (3/4 completely accurate, working)
+const uintptr_t Send = [DFLog::ReduceMeshDebugLog] ReducedMeshAeroForceModel: original #tris = {} // NOT ACCURATE
+const uintptr_t ProcessNetworkPacket = RakPeer::ProcessNetworkPacket
+const uintptr_t ReportNetworkError = [DFLog::NetworkTrace] reportPerServerMetric::: sc(%s:%d).state = %d :: returning false
+const uintptr_t HandleConnectionState = [DFLog::NetworkTrace] updateServerConnectionState::: sc(%s).old_state = %d -> new_state = %d :: returning false
+  
 // task lib
 const uintptr_t task.defer = task.defer is not available for AuroraScripts
 const uintptr_t task.spawn = task.spawn is not available for AuroraScripts
 const uintptr_t task.desynchronize = task.desynchronize() may only be called from a script that is a descendant of an Actor
 const uintptr_t task.synchronize = task.synchronize() may only be called from a script that is a descendant of an Actor
 const uintptr_t task.wait = task.wait is not available for AuroraScripts
+const uintptr_t task.cancel = cannot cancel thread
 
 // task lib (ez version)
 /*

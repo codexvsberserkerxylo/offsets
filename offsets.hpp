@@ -123,7 +123,7 @@ enum ReflectionType : uint32_t
 
 namespace Offsets
 {
-    inline constexpr const char* LiveChannel = "version-8884371d30284041";
+    inline constexpr const char* LiveChannel = "version-1a951716f19e4638";
 
     namespace Hyperion
     {

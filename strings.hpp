@@ -1,8 +1,9 @@
 // fucking from like version-acc4b74f79e743b9 idk
+// i have like 100 strings, not leaking all of them gng
 const uintptr_t luaO_nilobject = Attempt to migrate WeakObjectRef across VM boundary
 const uintptr_t luaT_Eventnames = __call
 const uintptr_t luaT_typenames = userdata
-const uintptr_t RawScheduler = HumanoidParallelManagerTaskQueue // string use xref
+const uintptr_t RawScheduler = HumanoidParallelManagerTaskQueue
 const uintptr_t HashTableLookup = Unable to query property {}. It is not scriptable
 const uintptr_t ScriptContextResume = Script execution is not allowed in this context | ScriptResumeBlocked
 const uintptr_t FlogDataBank = WindowsRealtimeProtocolEnabled
@@ -26,7 +27,7 @@ const uintptr_t task.desynchronize = task.desynchronize() may only be called fro
 const uintptr_t task.synchronize = task.synchronize() may only be called from a script that is a descendant of an Actor
 const uintptr_t task.wait = task.wait is not available for AuroraScripts
 
-// OUTDATED task lib
+// task lib (ez version)
 /*
  * showcased version: version-ec412128eba3476e
  * 

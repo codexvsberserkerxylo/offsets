@@ -1,7 +1,7 @@
 // dumped by nick
-// date: 2026-07-01 18:29:01
-// took 13.2s
-// success rate: 95.7%
+// date: 2026-07-07 19:09:08
+// took 13.9s
+// success rate: 96.3%
 
 #include <cstdint>
 #include <Windows.h>
@@ -123,12 +123,12 @@ enum ReflectionType : uint32_t
 
 namespace Offsets
 {
-    inline constexpr const char* LiveChannel = "version-5cf2272675e145f5";
+    inline constexpr const char* LiveChannel = "version-90f2fddd3b244ff6";
 
     namespace Hyperion
     {
-        const uintptr_t BitMap = HREBASE(0x1531d60);
-        const uintptr_t ControlFlowGuard = HREBASE(0x3e12d0);
+        const uintptr_t BitMap = HREBASE(0x1512ca0);
+        const uintptr_t ControlFlowGuard = HREBASE(0xf85bd0);
 
         inline constexpr uint8_t ByteShift = 15;
         inline constexpr uint8_t PageShift = 12;
@@ -138,21 +138,21 @@ namespace Offsets
 
         // other
         static const uint64_t patcheb[] = {
-            0x6a3b84, 0x6b9308, 0x6bbda8, 0x8e0bac, 0x8e0c34, 
-            0x95e58b, 0xad4a30, 0x1014188
+            0x23b75c, 0x890f7c, 0xbf57c8, 0xedb3f8, 0xf6f6e4, 
+            0xf73cf8, 0xfc1fb3, 0x1212fcc
         };
     } // namespace Hyperion
 
     namespace DataModel
     {
-        const uintptr_t DataModelDeleterPointer = REBASE(0x7eb376);
-        const uintptr_t FakeDataModelPointer = REBASE(0x7c3d2e8);
+        const uintptr_t DataModelDeleterPointer = REBASE(0x7eed96);
+        const uintptr_t FakeDataModelPointer = REBASE(0x7cb3d78);
     } // namespace DataModel
 
     namespace ScriptContext
     {
         inline constexpr uintptr_t RequireBypass = 0x198;
-        const uintptr_t Resume = REBASE(0x1dd39e0);
+        const uintptr_t Resume = REBASE(0x1deadc0);
     } // namespace ScriptContext
 
     namespace BasePart
@@ -183,9 +183,9 @@ namespace Offsets
 
     namespace RobloxThread
     {
-        const uintptr_t GetIdentityStruct = REBASE(0x4a4d750);
-        const uintptr_t GetTlsPointer = REBASE(0x1cfe3d0);
-        const uintptr_t Impersonator = REBASE(0x644470);
+        const uintptr_t GetIdentityStruct = REBASE(0x4aa45d0);
+        const uintptr_t GetTlsPointer = REBASE(0x1d15660);
+        const uintptr_t Impersonator = REBASE(0x647200);
     } // namespace RobloxThread
 
     namespace TaskScheduler
@@ -194,176 +194,184 @@ namespace Offsets
         inline constexpr uintptr_t JobsEnd = 0x1b0;
         inline constexpr uintptr_t JobsStart = 0xb0;
         inline constexpr uintptr_t MaxFps = 0x1d0;
-        const uintptr_t RawScheduler = REBASE(0x7809320);
-        const uintptr_t TaskSchedulerTargetFps = REBASE(0x69c3a08);
+        const uintptr_t RawScheduler = REBASE(0x787d470);
+        const uintptr_t TaskSchedulerTargetFps = REBASE(0x6a2ab30);
     } // namespace TaskScheduler
 
     namespace Instance
     {
         inline constexpr uintptr_t ClassDescriptor = 0x18;
-        const uintptr_t GetProperty = REBASE(0xc8a490);
-        const uintptr_t Push = REBASE(0x1cf6fb0);
+        const uintptr_t GetProperty = REBASE(0xc97040);
+        const uintptr_t Push = REBASE(0x1d0e240);
     } // namespace Instance
 
     namespace Property
     {
-        const uintptr_t HashTableLookup = REBASE(0x1cb7920);
-        const uintptr_t KTable = REBASE(0x81ce200);
+        const uintptr_t HashTableLookup = REBASE(0x1ccee00);
+        const uintptr_t KTable = REBASE(0x8245c20);
     } // namespace Property
 
     namespace Raknet
     {
-        const uintptr_t HandleConnectionState = REBASE(0xa54750);
-        const uintptr_t ProcessNetworkPacket = REBASE(0x31919d0);
-        const uintptr_t ReportNetworkError = REBASE(0xa49200);
-        const uintptr_t Send = REBASE(0x30d5990);
+        const uintptr_t HandleConnectionState = REBASE(0xa5b530);
+        const uintptr_t ProcessNetworkPacket = REBASE(0x31b0e50);
+        const uintptr_t ReportNetworkError = REBASE(0xa4fee0);
+        const uintptr_t Send = REBASE(0x30f3db0);
     } // namespace Raknet
 
     namespace Luau
     {
-        const uintptr_t currfuncname = REBASE(0x1cd0720);
-        const uintptr_t f_luaopen = REBASE(0x4700360);
-        const uintptr_t lua_break = REBASE(0x4700410);
-        const uintptr_t lua_clock = REBASE(0x4704cb9);
-        const uintptr_t lua_exception = REBASE(0x46ff3d0);
-        const uintptr_t lua_getfield = REBASE(0x4702740);
-        const uintptr_t lua_newstate = REBASE(0x46fe430);
-        const uintptr_t lua_pushfstringL = REBASE(0x46fb5a0);
-        const uintptr_t lua_pushstring = REBASE(0x46fb910);
-        const uintptr_t lua_pushvfstring = REBASE(0x46fbcb0);
-        const uintptr_t lua_resetthread = REBASE(0x46ff2a0);
-        const uintptr_t lua_setfield = REBASE(0x1721282);
-        const uintptr_t lua_yield = REBASE(0x4700670);
-        const uintptr_t luaB_assert = REBASE(0x4715380);
-        const uintptr_t luaB_error = REBASE(0x4714e40);
-        const uintptr_t luaB_gcinfo = REBASE(0x4715270);
-        const uintptr_t luaB_getfenv = REBASE(0x4714fd0);
-        const uintptr_t luaB_getmetatable = REBASE(0x1d255f0);
-        const uintptr_t luaB_newproxy = REBASE(0x47154a0);
-        const uintptr_t luaB_next = REBASE(0x4715320);
-        const uintptr_t luaB_pcall = REBASE(0x46fa710);
-        const uintptr_t luaB_pcallrun = REBASE(0x46fb460);
-        const uintptr_t luaB_print = REBASE(0x4714c20);
-        const uintptr_t luaB_rawequal = REBASE(0x2655e70);
-        const uintptr_t luaB_rawget = REBASE(0x4715160);
-        const uintptr_t luaB_rawlen = REBASE(0x4715210);
-        const uintptr_t luaB_rawset = REBASE(0x47151b0);
-        const uintptr_t luaB_setfenv = REBASE(0x1e21cb0);
-        const uintptr_t luaB_setmetatable = REBASE(0x4714f10);
-        const uintptr_t luaB_tonumber = REBASE(0x4714d00);
-        const uintptr_t luaB_tostring = REBASE(0x47154a0);
-        const uintptr_t luaB_type = REBASE(0x47152a0);
-        const uintptr_t luaB_typeof = REBASE(0x47152e0);
-        const uintptr_t luaC_step = REBASE(0x4704c60);
-        const uintptr_t luaD_rawrunprotected = REBASE(0x4700930);
-        const uintptr_t luaF_newlclosure = REBASE(0x472b150);
-        const uintptr_t luaF_newproto = REBASE(0x472b200);
-        const uintptr_t luaG_runerror = REBASE(0x1e36b50);
-        const uintptr_t luaG_runerrorl = REBASE(0x4703540);
-        const uintptr_t luaH_dummynode = REBASE(0x4713450);
-        const uintptr_t luaH_new = REBASE(0x4723c70);
-        const uintptr_t luaL_argerrorl = REBASE(0x47011b0);
-        const uintptr_t luaL_checkstring = REBASE(0x4702740);
-        const uintptr_t luaL_checktype = REBASE(0x4701800);
-        const uintptr_t luaL_error = REBASE(0x4701800);
-        const uintptr_t luaL_errorl = REBASE(0x4701800);
-        const uintptr_t luaL_findtable = REBASE(0x4701850);
-        const uintptr_t luaL_getmetafield = REBASE(0x1d1a520);
-        const uintptr_t luaL_register = REBASE(0x4701f07);
-        const uintptr_t luaL_testudata = REBASE(0x472cac0);
-        const uintptr_t luaL_tostring = REBASE(0x1cd0720);
-        const uintptr_t luaL_typeerrorL = REBASE(0x4702740);
-        const uintptr_t luaM_free = REBASE(0x47217f0);
-        const uintptr_t luaM_freegco = REBASE(0x4721d30);
-        const uintptr_t luaM_toobig = REBASE(0x47034e0);
-        const uintptr_t luaM_visitgco = REBASE(0x4721690);
-        const uintptr_t luaO_chunkid = REBASE(0x4731140);
-        const uintptr_t luaO_nilobject = REBASE(0x46f9d34);
-        const uintptr_t luaopen_base = REBASE(0x4715a50);
-        const uintptr_t luaopen_math = REBASE(0x1720ed0);
-        const uintptr_t luaT_eventnames = REBASE(0x6983208);
-        const uintptr_t luaT_init = REBASE(0x4722110);
-        const uintptr_t luaT_typenames = REBASE(0x5dd7a30);
-        const uintptr_t luaV_gettable = REBASE(0x472cc30);
-        const uintptr_t luaV_settable = REBASE(0x472d2d0);
-        const uintptr_t luaVM_load = REBASE(0x3b03b98);
-        const uintptr_t newgcoblock = REBASE(0x4721e00);
-        const uintptr_t print = REBASE(0x4681920);
-        const uintptr_t pseudo2addr = REBASE(0x4a7da10);
-        const uintptr_t pusherror = REBASE(0x46fdea0);
+        const uintptr_t currfuncname = REBASE(0x1ce79b0);
+        const uintptr_t f_luaopen = REBASE(0x4756220);
+        const uintptr_t lua_break = REBASE(0x47562d0);
+        const uintptr_t lua_clock = REBASE(0x475ab1a);
+        const uintptr_t lua_exception = REBASE(0x47552c0);
+        const uintptr_t lua_getfield = REBASE(0x47585a0);
+        const uintptr_t lua_newstate = REBASE(0x4754320);
+        const uintptr_t lua_pushfstringL = REBASE(0x4751410);
+        const uintptr_t lua_pushstring = REBASE(0x4751790);
+        const uintptr_t lua_pushvfstring = REBASE(0x4751b30);
+        const uintptr_t lua_resetthread = REBASE(0x4755190);
+        const uintptr_t lua_setfield = REBASE(0x1735752);
+        const uintptr_t lua_yield = REBASE(0x4756530);
+        const uintptr_t luaB_assert = REBASE(0x476b590);
+        const uintptr_t luaB_error = REBASE(0x476b050);
+        const uintptr_t luaB_gcinfo = REBASE(0x476b480);
+        const uintptr_t luaB_getfenv = REBASE(0x476b1e0);
+        const uintptr_t luaB_getmetatable = REBASE(0x1d3c9a0);
+        const uintptr_t luaB_newproxy = REBASE(0x476b6b0);
+        const uintptr_t luaB_next = REBASE(0x476b530);
+        const uintptr_t luaB_pcall = REBASE(0x4750590);
+        const uintptr_t luaB_pcallrun = REBASE(0x47512e0);
+        const uintptr_t luaB_print = REBASE(0x476ae30);
+        const uintptr_t luaB_rawequal = REBASE(0x2672fd0);
+        const uintptr_t luaB_rawget = REBASE(0x476b370);
+        const uintptr_t luaB_rawlen = REBASE(0x476b420);
+        const uintptr_t luaB_rawset = REBASE(0x476b3c0);
+        const uintptr_t luaB_setfenv = REBASE(0x1e3a200);
+        const uintptr_t luaB_setmetatable = REBASE(0x476b120);
+        const uintptr_t luaB_tonumber = REBASE(0x476af10);
+        const uintptr_t luaB_tostring = REBASE(0x476b6b0);
+        const uintptr_t luaB_type = REBASE(0x476b4b0);
+        const uintptr_t luaB_typeof = REBASE(0x476b4f0);
+        const uintptr_t luaC_step = REBASE(0x475aac0);
+        const uintptr_t luaD_rawrunprotected = REBASE(0x47567e0);
+        const uintptr_t luaF_freeproto = REBASE(0x47810b0);
+        const uintptr_t luaF_newlclosure = REBASE(0x4781380);
+        const uintptr_t luaF_newproto = REBASE(0x4781430);
+        const uintptr_t luaG_runerror = REBASE(0x1e4f090);
+        const uintptr_t luaG_runerrorl = REBASE(0x4759350);
+        const uintptr_t luaH_dummynode = REBASE(0x4769620);
+        const uintptr_t luaH_new = REBASE(0x4779e80);
+        const uintptr_t luaL_argerrorl = REBASE(0x4757020);
+        const uintptr_t luaL_checkstring = REBASE(0x47585a0);
+        const uintptr_t luaL_checktype = REBASE(0x4757670);
+        const uintptr_t luaL_error = REBASE(0x4757670);
+        const uintptr_t luaL_errorl = REBASE(0x4757670);
+        const uintptr_t luaL_findtable = REBASE(0x47576c0);
+        const uintptr_t luaL_getmetafield = REBASE(0x1d31880);
+        const uintptr_t luaL_register = REBASE(0x4757d40);
+        const uintptr_t luaL_testudata = REBASE(0x4782d16);
+        const uintptr_t luaL_tostring = REBASE(0x1ce79b0);
+        const uintptr_t luaL_typeerrorL = REBASE(0x47585a0);
+        const uintptr_t luaM_free = REBASE(0x4777a10);
+        const uintptr_t luaM_freegco = REBASE(0x4777f50);
+        const uintptr_t luaM_toobig = REBASE(0x47592f0);
+        const uintptr_t luaM_visitgco = REBASE(0x47778b0);
+        const uintptr_t luaO_chunkid = REBASE(0x4787380);
+        const uintptr_t luaO_nilobject = REBASE(0x474fbb4);
+        const uintptr_t luaopen_base = REBASE(0x476bc60);
+        const uintptr_t luaopen_math = REBASE(0x17353a0);
+        const uintptr_t luaT_eventnames = REBASE(0x69ea408);
+        const uintptr_t luaT_init = REBASE(0x4778330);
+        const uintptr_t luaT_typenames = REBASE(0x5e3b6d0);
+        const uintptr_t luaV_gettable = REBASE(0x4782e30);
+        const uintptr_t luaV_settable = REBASE(0x4783500);
+        const uintptr_t luaVM_load = REBASE(0x4615df0);
+        const uintptr_t newgcoblock = REBASE(0x4778020);
+        const uintptr_t print = REBASE(0x46d3410);
+        const uintptr_t pseudo2addr = REBASE(0x4ad4890);
+        const uintptr_t pusherror = REBASE(0x4753d60);
     } // namespace Luau
 
     namespace Task
     {
-        const uintptr_t cancel = REBASE(0x1e47320);
-        const uintptr_t defer = REBASE(0x1e47630);
-        const uintptr_t desynchronize = REBASE(0x1e47c70);
-        const uintptr_t spawn = REBASE(0x1e48510);
-        const uintptr_t synchronize = REBASE(0x1e48690);
-        const uintptr_t wait = REBASE(0x1e48890);
+        const uintptr_t cancel = REBASE(0x1e5f870);
+        const uintptr_t defer = REBASE(0x1e5fb80);
+        const uintptr_t desynchronize = REBASE(0x1e601c0);
+        const uintptr_t spawn = REBASE(0x1e60a60);
+        const uintptr_t synchronize = REBASE(0x1e60be0);
+        const uintptr_t wait = REBASE(0x1e60de0);
     } // namespace Task
 
     namespace Coroutine
     {
-        const uintptr_t close = REBASE(0x4715e80);
-        const uintptr_t create = REBASE(0x4715d60);
+        const uintptr_t close = REBASE(0x476c090);
+        const uintptr_t create = REBASE(0x476bf70);
     } // namespace Coroutine
 
     namespace Signals
     {
-        const uintptr_t FireMouseHoverEnter = REBASE(0x262f280);
-        const uintptr_t FireMouseHoverLeave = REBASE(0x262f470);
-        const uintptr_t FireTouchInterest = REBASE(0x2a9ca20);
+        const uintptr_t FireMouseHoverEnter = REBASE(0x264c530);
+        const uintptr_t FireMouseHoverLeave = REBASE(0x264c720);
+        const uintptr_t FireTouchInterest = REBASE(0x2abeb40);
     } // namespace Signals
 
     namespace IsParallel
     {
-        const uintptr_t ActorRequired_Call = REBASE(0x1cf0036);
-        const uintptr_t ActorRequired_Prop = REBASE(0x1cf0230);
-        const uintptr_t Connection_Disconnect = REBASE(0x1d0b690);
-        const uintptr_t Event_Connect = REBASE(0x1d0a530);
-        const uintptr_t Event_ConnectParallel = REBASE(0x1d0a960);
-        const uintptr_t Event_Once = REBASE(0x1d0e0a0);
-        const uintptr_t EventAccess = REBASE(0x1cebf20);
-        const uintptr_t FilterDescendants = REBASE(0x1d6c130);
-        const uintptr_t FunctionCall = REBASE(0x1cf0036);
-        const uintptr_t Instance_fromExisting = REBASE(0x1db3b10);
-        const uintptr_t LocalSafe_Call = REBASE(0x1cf0036);
-        const uintptr_t LocalSafe_Write = REBASE(0x1cf0230);
-        const uintptr_t PropertyRead = REBASE(0x1cebf20);
-        const uintptr_t PropertyWrite = REBASE(0x1cf0230);
-        const uintptr_t ScriptConnect = REBASE(0x1d0a960);
+        const uintptr_t ActorRequired_Call = REBASE(0x1d072c6);
+        const uintptr_t ActorRequired_Prop = REBASE(0x1d074c0);
+        const uintptr_t Connection_Disconnect = REBASE(0x1d22990);
+        const uintptr_t Event_Connect = REBASE(0x1d21830);
+        const uintptr_t Event_ConnectParallel = REBASE(0x1d21c60);
+        const uintptr_t Event_Once = REBASE(0x1d253b0);
+        const uintptr_t EventAccess = REBASE(0x1d031b0);
+        const uintptr_t FilterDescendants = REBASE(0x1d8a7e0);
+        const uintptr_t FunctionCall = REBASE(0x1d072c6);
+        const uintptr_t Instance_fromExisting = REBASE(0x1dcaf00);
+        const uintptr_t LocalSafe_Call = REBASE(0x1d072c6);
+        const uintptr_t LocalSafe_Write = REBASE(0x1d074c0);
+        const uintptr_t PropertyRead = REBASE(0x1d031b0);
+        const uintptr_t PropertyWrite = REBASE(0x1d074c0);
+        const uintptr_t ScriptConnect = REBASE(0x1d21c60);
     } // namespace IsParallel
 
     // other
-    const uintptr_t AttachRobloxExtraSpace = REBASE(0x1d32ea0);
-    const uintptr_t CastArgs = REBASE(0x3b147a0);
-    const uintptr_t closestate = REBASE(0x46fdde0);
-    const uintptr_t ConnectionDisconnect = REBASE(0x4a69360);
-    const uintptr_t EnableLoadModule = REBASE(0x1e216e0);
-    const uintptr_t GetCapabilities = REBASE(0x4760910);
-    const uintptr_t GetContextObject = REBASE(0x1d14750);
-    const uintptr_t GetCurrentThreadId = REBASE(0x4a4d750);
-    const uintptr_t GetFFlag = REBASE(0x2c5c90);
-    const uintptr_t GetGlobalState = REBASE(0x4ab5ba0f);
-    const uintptr_t GetGlobalStateForInstance = REBASE(0x1d00400);
-    const uintptr_t loadsafe = REBASE(0x47065e0);
-    const uintptr_t LockViolationInstanceCrash = REBASE(0x5eb5278);
-    const uintptr_t LockViolationScriptCrash = REBASE(0x5ebb618);
-    const uintptr_t LuaStepIntervalMsOverrideEnabled = REBASE(0x5ecaf30);
-    const uintptr_t markroot = REBASE(0x4705130);
-    const uintptr_t OpcodeLookupTable = REBASE(0x33d4490);
-    const uintptr_t PhysicsSenderMaxBandwidthBps = REBASE(0x5d6f030);
-    const uintptr_t Register = REBASE(0x2c05600);
-    const uintptr_t RobloxLogCrash = REBASE(0x4a64380);
-    const uintptr_t SetFFlag = REBASE(0x4a911f0);
-    const uintptr_t traversetable = REBASE(0x4705f60);
-    const uintptr_t WebSocketServiceEnableClientCreation = REBASE(0x5dc30b0);
-    const uintptr_t WndProcessCheck = REBASE(0x5cd3058);
+    const uintptr_t AttachRobloxExtraSpace = REBASE(0x1d4a2c0);
+    const uintptr_t CastArgs = REBASE(0x3afe900);
+    const uintptr_t closestate = REBASE(0x4753ca0);
+    const uintptr_t ConnectionDisconnect = REBASE(0x4ac01d0);
+    const uintptr_t EnableLoadModule = REBASE(0x1e39c30);
+    const uintptr_t GetCapabilities = REBASE(0x47b6b40);
+    const uintptr_t GetContextObject = REBASE(0x4ad4515a);
+    const uintptr_t GetCurrentThreadId = REBASE(0x4aa45d0);
+    const uintptr_t GetFFlag = REBASE(0x2c6db0);
+    const uintptr_t GetGlobalState = REBASE(0x1d2bab0);
+    const uintptr_t GetGlobalStateForInstance = REBASE(0x1d17690);
+    const uintptr_t loadsafe = REBASE(0x475c630);
+    const uintptr_t LockViolationInstanceCrash = REBASE(0x5f19758);
+    const uintptr_t LockViolationScriptCrash = REBASE(0x5f1faa8);
+    const uintptr_t LuaStepIntervalMsOverrideEnabled = REBASE(0x5f2f370);
+    const uintptr_t markroot = REBASE(0x475afc0);
+    const uintptr_t OpcodeLookupTable = REBASE(0x33f4850);
+    const uintptr_t PhysicsSenderMaxBandwidthBps = REBASE(0x5dd28b0);
+    const uintptr_t Register = REBASE(0x2c219d0);
+    const uintptr_t RobloxLogCrash = REBASE(0x4abb1f0);
+    const uintptr_t SetFFlag = REBASE(0x4ae8140);
+    const uintptr_t traversetable = REBASE(0x475bfb0);
+    const uintptr_t WebSocketServiceEnableClientCreation = REBASE(0x5e26e18);
+    const uintptr_t WndProcessCheck = REBASE(0x5d36090);
 } // namespace Offsets
 
 namespace Structs
 {
-    inline constexpr uintptr_t g_gcstate = 0xd;
-    inline constexpr uintptr_t g_freepages = 0x1e0;
+    inline constexpr uintptr_t g_gcstate = 0x41;
+    inline constexpr uintptr_t g_freepages = 0x1d0;
+    inline constexpr uintptr_t Proto_code = 0x68;
+    inline constexpr uintptr_t Proto_p = 0x70;
+    inline constexpr uintptr_t Proto_k = 0x60;
+    inline constexpr uintptr_t Proto_lineinfo = 0x40;
+    inline constexpr uintptr_t Proto_locvars = 0x48;
+    inline constexpr uintptr_t Proto_upvalues = 0x48;
+    inline constexpr uintptr_t Proto_debuginsn = 0x58;
 } // namespace Structs

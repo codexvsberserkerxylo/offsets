@@ -17,7 +17,7 @@ const uintptr_t FireTouchInterest = new overlap in different world
 const uintptr_t GetGlobalState = Script Start
 const uintptr_t GetFFlag = _DataCenterFilter
 
-// some new ones (tested on version-5cf2272675e145f5) and got every single one by MYSELF btw
+// some new ones (tested on version-5cf2272675e145f5)
 const uintptr_t print = Breakpoint %s:%d ignored: %s
 const uintptr_t luaL_register = name conflict for module '%s'
 const uintptr_t luaH_dummynode = "{\"type\":\"table\",\"cat\":%d,\"size\":%d" // can use ,\"pairs\":[ and \"%p\" and ,\"metatable\": and more too
@@ -48,8 +48,7 @@ const uintptr_t luaL_typeerrorL = invalid argument #%d to '%s' (%s expected, got
 const uintptr_t luaL_argerrorl = invalid argument #%d to '%s' (%s)
 const uintptr_t pusherror = error in error handling // func at xref
 const uintptr_t f_luaopen = error in error handling // second func at xref
-// because im feeling extra generous:
-// convert JobName, ClassDescriptor, JobsEnd, MaxFps, JobsStart, ScriptContextToResume to hex via pressing H on it while having it selected (ida)
+//
 const uintptr_t InstancePush = Binding does not exist // figure it out yourself, not that hard
 const uintptr_t ClassDescriptor = Could not find property descriptor // figure it out yourslelf
 const uintptr_t GetProperty = Could not find property descriptor // figure it out yourself
@@ -60,8 +59,8 @@ const uintptr_t TaskSchedulerPointer = Out of arbiter nodes: Increase the FInt::
 const uintptr_t JobsEnd = Out of arbiter nodes: Increase the FInt::TaskSchedulerMaxNumOfArbiters value // figure it out
 const uintptr_t JobsStart = TaskScheduler // 2nd qword in func i think 
 const uintptr_t ScriptContextResume = "Can't resume script in this context" // func at xref
-const uintptr_t ScriptContextToResume = "Can't resume script in this context" // hard but u can figure it out gng
-// hyperion shit, figure it out yourself 
+const uintptr_t ScriptContextToResume = "Can't resume script in this context" // figure it out
+//
 const uintptr_t BitMap = 0x7fffffffffff // constant in RobloxPlayerBeta.dll
 const uintptr_t ControlFlowGuard = 0x7fffffffffff // constant in RobloxPlayerBeta.dll
 // unsure ones:
@@ -74,7 +73,8 @@ const uintptr_t PhysicsSenderMaxBandwidthBps = PhysicsSenderMaxBandwidthBps // i
 const uintptr_t WebSocketServiceEnableClientCreation = WebSocketServiceEnableClientCreation // i think
 const uintptr_t LockViolationScriptCrash = LockViolationScriptCrash // i think
 
-// raknet (tested on version-5cf2272675e145f5) because im feeling nice (3/4 completely accurate, working)
+// raknet (tested on version-5cf2272675e145f5)
+// 3/4 are accurate
 const uintptr_t Send = [DFLog::ReduceMeshDebugLog] ReducedMeshAeroForceModel: original #tris = {} // NOT ACCURATE
 const uintptr_t ProcessNetworkPacket = RakPeer::ProcessNetworkPacket
 const uintptr_t ReportNetworkError = [DFLog::NetworkTrace] reportPerServerMetric::: sc(%s:%d).state = %d :: returning false
@@ -110,5 +110,5 @@ const uintptr_t task.cancel = cannot cancel thread
  *   qword_761ADD8 = (__int64)qword_1DAB800; // task.wait
  *   qword_761ADE0 = (__int64)"cancel";
  *   qword_761ADE8 = (__int64)sub_1DAA210;   // task.cancel
- * and these are all offsets for the task lib ez im so tuff (found ts by myself accidentally
+ * and these are all offsets for the task lib (found this accidentally)
  */

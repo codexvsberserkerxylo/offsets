@@ -1,6 +1,6 @@
 // dumped by nick
-// date: 2026-07-09 03:00:53
-// took 16.2s
+// date: 2026-07-12 05:29:16
+// took 10.5s
 // success rate: 96.9%
 
 #include <cstdint>
@@ -123,7 +123,7 @@ enum ReflectionType : uint32_t
 
 namespace Offsets
 {
-    inline constexpr const char* LiveChannel = "version-90f2fddd3b244ff6";
+    inline constexpr const char* LiveChannel = "version-36a2600cebf1487d";
 
     namespace Hyperion
     {

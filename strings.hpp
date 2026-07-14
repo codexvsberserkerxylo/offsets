@@ -1,5 +1,4 @@
-// fucking from like version-acc4b74f79e743b9 idk
-// i have like 100 strings, not leaking all of them gng
+// i have like 100 strings, not leaking all of them
 const uintptr_t luaO_nilobject = Attempt to migrate WeakObjectRef across VM boundary
 const uintptr_t luaT_Eventnames = __call
 const uintptr_t luaT_typenames = userdata
@@ -21,7 +20,7 @@ const uintptr_t GetFFlag = _DataCenterFilter
 const uintptr_t print = Breakpoint %s:%d ignored: %s
 const uintptr_t luaL_register = name conflict for module '%s'
 const uintptr_t luaH_dummynode = "{\"type\":\"table\",\"cat\":%d,\"size\":%d" // can use ,\"pairs\":[ and \"%p\" and ,\"metatable\": and more too
-const uintptr_t overlap = new overlap in different world // look for a number, convert it to hex
+const uintptr_t overlap = new overlap in different world // look for a number, convert it to hex (e.g. if u see 496 and press h its 1f0 so thats the overlap offset)
 const uintptr_t Register = Local player already exists
 const uintptr_t RobloxLogCrash = Invalid Facet Access
 const uintptr_t coroutine.close = cannot close %s coroutine

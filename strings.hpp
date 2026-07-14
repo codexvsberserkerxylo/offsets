@@ -60,7 +60,6 @@ const uintptr_t JobsEnd = Out of arbiter nodes: Increase the FInt::TaskScheduler
 const uintptr_t JobsStart = TaskScheduler // 2nd qword in func i think 
 const uintptr_t ScriptContextResume = "Can't resume script in this context" // func at xref
 const uintptr_t ScriptContextToResume = "Can't resume script in this context" // figure it out
-const uintptr_t RequireBypass = "Cannot require a non-RobloxScript module from a RobloxScript" // i think
 //
 const uintptr_t BitMap = 0x7fffffffffff // constant in RobloxPlayerBeta.dll
 const uintptr_t ControlFlowGuard = 0x7fffffffffff // constant in RobloxPlayerBeta.dll

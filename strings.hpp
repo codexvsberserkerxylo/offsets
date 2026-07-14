@@ -112,3 +112,32 @@ const uintptr_t task.cancel = cannot cancel thread
  *   qword_761ADE8 = (__int64)sub_1DAA210;   // task.cancel
  * and these are all offsets for the task lib (found this accidentally)
  */
+
+
+// coroutine lib
+const uintptr_t coroutine.close = cannot close %s coroutine
+const uintptr_t coroutine.resume = too many arguments to resume
+
+// coroutine lib (ez version)
+/*
+ * showcased version: version-36a2600cebf1487d
+ * search for the string "isyieldable" and check its xrefs
+ * you will find some block shit of the coroutine functions:
+ * .rdata:00000000064A9380 off_64A9380     dq offset aCreate_0     ; DATA XREF: sub_3E819B0+6↑o
+ * .rdata:00000000064A9380                                         ; "create"
+ * .rdata:00000000064A9388                 dq offset sub_3E81220 // coroutine.create
+ * .rdata:00000000064A9390                 dq offset aRunning_1    ; "running"
+ * .rdata:00000000064A9398                 dq offset sub_3E812E0 // coroutine.running
+ * .rdata:00000000064A93A0                 dq offset aStatus       ; "status"
+ * .rdata:00000000064A93A8                 dq offset sub_3E811B0 // coroutine.status
+ * .rdata:00000000064A93B0                 dq offset aWrap_0       ; "wrap"
+ * .rdata:00000000064A93B8                 dq offset sub_3E81260 // coroutine.wrap
+ * .rdata:00000000064A93C0                 dq offset aYield        ; "yield"
+ * .rdata:00000000064A93C8                 dq offset sub_3E812C0 // coroutine.yield
+ * .rdata:00000000064A93D0                 dq offset aIsyieldable  ; "isyieldable"
+ * .rdata:00000000064A93D8                 dq offset sub_3E81310 // coroutine.isyieldable
+ * .rdata:00000000064A93E0                 dq offset aClose_0      ; "close"
+ * .rdata:00000000064A93E8                 dq offset sub_3E81340 // coroutine.close
+ *
+ * btw under all of this if u scroll down a bit theres more libs like the string lib, bit lib and more
+ */

@@ -47,6 +47,9 @@ const uintptr_t luaL_typeerrorL = invalid argument #%d to '%s' (%s expected, got
 const uintptr_t luaL_argerrorl = invalid argument #%d to '%s' (%s)
 const uintptr_t pusherror = error in error handling // func at xref
 const uintptr_t f_luaopen = error in error handling // second func at xref
+const uintptr_t GetTlsPointer = AggregateBroadphaseGrids // first call in func (click on it and it returns the real GetTlsPointer)
+const uintptr_t GetIdentityStruct = GetStyled(): Property %s is write-only // second call in func
+const uintptr_t IdentityPtr = GetStyled(): Property %s is write-only // go into GetIdentityStruct (double click it) and it returns the IdentityPtr to GetTlsPointer
 //
 const uintptr_t InstancePush = Binding does not exist // figure it out yourself, not that hard
 const uintptr_t ClassDescriptor = Could not find property descriptor // figure it out yourslelf

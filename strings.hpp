@@ -6,7 +6,6 @@ const uintptr_t RawScheduler = HumanoidParallelManagerTaskQueue
 const uintptr_t HashTableLookup = Unable to query property {}. It is not scriptable
 const uintptr_t ScriptContextResume = Script execution is not allowed in this context | ScriptResumeBlocked
 const uintptr_t FlogDataBank = WindowsRealtimeProtocolEnabled
-const uintptr_t Print = Current identity is %d
 const uintptr_t KTable = Trying to call method on object of type: `%s` with incorrect arguments.
 const uintptr_t LockViolationInstanceCrash =  LockViolationInstanceCrash 
 const uintptr_t luaH_dummynode = Attempt to migrate WeakObjectRef across VM boundary

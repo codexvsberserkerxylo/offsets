@@ -1,7 +1,7 @@
 // dumped by nick
-// date: 2026-07-16 07:57:19
-// took 13.1s
-// success rate: 95.1%
+// date: 2026-07-16 16:56:03
+// took 12.5s
+// success rate: 98.2%
 
 #include <cstdint>
 #include <Windows.h>
@@ -152,6 +152,7 @@ namespace Offsets
     namespace ScriptContext
     {
         inline constexpr uintptr_t RequireBypass = 0x198;
+        inline constexpr uintptr_t ToResume = 0x7D8; // verified in ida
         const uintptr_t Resume = REBASE(0x1e067f0);
     } // namespace ScriptContext
 
@@ -178,8 +179,8 @@ namespace Offsets
 
     namespace ByteCode
     {
-        inline constexpr uintptr_t ModuleScriptByteCode = 0x150;
-        inline constexpr uintptr_t ScriptByteCode = 0x1a8;
+        inline constexpr uintptr_t ModuleScriptByteCode = 0x138;
+        inline constexpr uintptr_t ScriptByteCode = 0x190;
     } // namespace ByteCode
 
     namespace RobloxThread
@@ -200,6 +201,7 @@ namespace Offsets
     namespace Instance
     {
         inline constexpr uintptr_t ClassDescriptor = 0x18;
+        inline constexpr uintptr_t PropertyMap = 0x250; // verified in ida
         const uintptr_t GetProperty = REBASE(0xc9d2a0);
         const uintptr_t Push = REBASE(0x1d29c40);
     } // namespace Instance
@@ -214,8 +216,9 @@ namespace Offsets
     {
         const uintptr_t HandleConnectionState = REBASE(0xa600b0);
         const uintptr_t ProcessNetworkPacket = REBASE(0x31e13c0);
+        const uintptr_t Receive = REBASE(0x31e5fb0);
         const uintptr_t ReportNetworkError = REBASE(0xa54a60);
-        const uintptr_t Send = REBASE(0x31244b0);
+        const uintptr_t Send = REBASE(0x31e19f0);
     } // namespace Raknet
 
     namespace Luau
@@ -283,6 +286,7 @@ namespace Offsets
         const uintptr_t luaT_eventnames = REBASE(0x6a4d3e8);
         const uintptr_t luaT_init = REBASE(0x47b1660);
         const uintptr_t luaT_typenames = REBASE(0x5e9a240);
+        const uintptr_t luau_execute = REBASE(0x47a1e30); // verified in ida, func: 0x479C780
         const uintptr_t luaV_gettable = REBASE(0x47bc3b0);
         const uintptr_t luaV_settable = REBASE(0x47bc8b0);
         const uintptr_t luaVM_load = REBASE(0x463fd18);
@@ -302,18 +306,26 @@ namespace Offsets
         const uintptr_t wait = REBASE(0x1e7cbd0);
     } // namespace Task
 
-    namespace Coroutine
+    namespace Coroutine // verified in ida
     {
         const uintptr_t close = REBASE(0x47a53e0);
         const uintptr_t create = REBASE(0x47a52c0);
+        const uintptr_t isyieldable = REBASE(0x47a53b0);
         const uintptr_t resume = REBASE(0x47a5510);
+        const uintptr_t running = REBASE(0x47a5380);
+        const uintptr_t status = REBASE(0x47a5250);
+        const uintptr_t wrap = REBASE(0x47a5300);
+        const uintptr_t yield = REBASE(0x47a5360);
     } // namespace Coroutine
 
-    namespace Signals
+    namespace Signals // verified in ida
     {
+        const uintptr_t FireLeftMouseClick = REBASE(0x266d770);
         const uintptr_t FireMouseHoverEnter = REBASE(0x266d980);
         const uintptr_t FireMouseHoverLeave = REBASE(0x266db70);
-        const uintptr_t FireTouchInterest = REBASE(0x2ae77c0);
+        const uintptr_t FireProximityPrompt = REBASE(0x26ade00);
+        const uintptr_t FireRightMouseClick = REBASE(0x266dde0);
+        const uintptr_t FireTouchInterest = REBASE(0x2ACAF00);
     } // namespace Signals
 
     namespace IsParallel
@@ -345,19 +357,17 @@ namespace Offsets
     const uintptr_t GetContextObject = REBASE(0x1d47450);
     const uintptr_t GetCurrentThreadId = REBASE(0x4ade9f0);
     const uintptr_t GetFFlag = REBASE(0x2c7d90);
-    const uintptr_t GetGlobalState = REBASE(0x1d47450);
+    const uintptr_t GetGlobalState = REBASE(0x9cf3b0);
     const uintptr_t GetGlobalStateForInstance = REBASE(0x1d33080);
     const uintptr_t loadsafe = REBASE(0x4795b20);
     const uintptr_t LockViolationInstanceCrash = REBASE(0x5f78f58);
     const uintptr_t LockViolationScriptCrash = REBASE(0x5f7f3d0);
     const uintptr_t LuaStepIntervalMsOverrideEnabled = REBASE(0x5f8ec10);
-    const uintptr_t markroot = REBASE(0x4794390);
     const uintptr_t OpcodeLookupTable = REBASE(0x34255d0);
     const uintptr_t PhysicsSenderMaxBandwidthBps = REBASE(0x5e30e50);
     const uintptr_t Register = REBASE(0x2c4b120);
     const uintptr_t RobloxLogCrash = REBASE(0x4af5610);
     const uintptr_t SetFFlag = REBASE(0x4b22560);
-    const uintptr_t traversetable = REBASE(0x47954a0);
     const uintptr_t WebSocketServiceEnableClientCreation = REBASE(0x5e85968);
     const uintptr_t WndProcessCheck = REBASE(0x5d94080);
 } // namespace Offsets

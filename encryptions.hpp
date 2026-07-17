@@ -1,5 +1,5 @@
-// dumped by nick
-// verified in ida
+// dumped by nick in 1.02 seconds
+// luau version: 0.729
 
 #define CLOSURE_CONT_ENC VMValue4
 #define CLOSURE_DEBUGNAME_ENC VMValue2

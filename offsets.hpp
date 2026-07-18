@@ -151,7 +151,7 @@ namespace Offsets
 
     namespace ScriptContext
     {
-        inline constexpr uintptr_t RequireBypass = 0x198;
+        inline constexpr uintptr_t RequireBypass = 0x909; // or 0x808 idfc
         inline constexpr uintptr_t ToResume = 0x7D8; // verified in ida
         const uintptr_t Resume = REBASE(0x1e067f0);
     } // namespace ScriptContext

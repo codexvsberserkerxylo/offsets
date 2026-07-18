@@ -185,9 +185,10 @@ namespace Offsets
 
     namespace RobloxThread
     {
-        const uintptr_t GetIdentityStruct = REBASE(0x670920);
-        const uintptr_t GetTlsPointer = REBASE(0x544b460);
-        const uintptr_t IdentityPtr = REBASE(0x20a5ac2);
+        // got these 3 from ida because they were wrong
+        const uintptr_t GetIdentityStruct = REBASE(0x47EFFE0);
+        const uintptr_t GetTlsPointer = REBASE(0xA120); // why are people saying its 7ee0 ???
+        const uintptr_t IdentityPtr = REBASE(0x82AB098);
         const uintptr_t Impersonator = REBASE(0x64a6e0);
     } // namespace RobloxThread
 
@@ -212,7 +213,7 @@ namespace Offsets
         const uintptr_t KTable = REBASE(0x82bb920);
     } // namespace Property
 
-    namespace Raknet
+    namespace Raknet // verified too
     {
         const uintptr_t HandleConnectionState = REBASE(0xa600b0);
         const uintptr_t ProcessNetworkPacket = REBASE(0x31e13c0);
@@ -260,6 +261,7 @@ namespace Offsets
         const uintptr_t luaD_rawrunprotected = REBASE(0x478fbf0);
         const uintptr_t luaF_newlclosure = REBASE(0x47ba720);
         const uintptr_t luaF_newproto = REBASE(0x47ba7d0);
+        const uintptr_t luaF_freeproto = REBASE(0x47BA460); // verified in ida
         const uintptr_t luaG_runerror = REBASE(0x1e6ae90);
         const uintptr_t luaG_runerrorl = REBASE(0x4792780);
         const uintptr_t luaH_dummynode = REBASE(0x47a2980);
@@ -286,7 +288,7 @@ namespace Offsets
         const uintptr_t luaT_eventnames = REBASE(0x6a4d3e8);
         const uintptr_t luaT_init = REBASE(0x47b1660);
         const uintptr_t luaT_typenames = REBASE(0x5e9a240);
-        const uintptr_t luau_execute = REBASE(0x47a1e30); // verified in ida, func: 0x479C780
+        const uintptr_t luau_execute = REBASE(0x47a1e30); // verified in ida
         const uintptr_t luaV_gettable = REBASE(0x47bc3b0);
         const uintptr_t luaV_settable = REBASE(0x47bc8b0);
         const uintptr_t luaVM_load = REBASE(0x463fd18);
@@ -325,7 +327,7 @@ namespace Offsets
         const uintptr_t FireMouseHoverLeave = REBASE(0x266db70);
         const uintptr_t FireProximityPrompt = REBASE(0x26ade00);
         const uintptr_t FireRightMouseClick = REBASE(0x266dde0);
-        const uintptr_t FireTouchInterest = REBASE(0x2ACAF00);
+        const uintptr_t FireTouchInterest = REBASE(0x2ACAF00); // verified in ida
     } // namespace Signals
 
     namespace IsParallel
@@ -371,10 +373,3 @@ namespace Offsets
     const uintptr_t WebSocketServiceEnableClientCreation = REBASE(0x5e85968);
     const uintptr_t WndProcessCheck = REBASE(0x5d94080);
 } // namespace Offsets
-
-namespace Structs
-{
-    inline constexpr uintptr_t L_global = 0x60;
-    inline constexpr uintptr_t g_gcstate = 0x45;
-    inline constexpr uintptr_t g_freepages = 0x1e0;
-} // namespace Structs

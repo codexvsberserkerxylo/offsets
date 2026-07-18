@@ -1,4 +1,4 @@
-// dumped by nick
+// I DO NOT FUCKING CARE IF THESE ARE WRONG
 // luau version: 0.729
 
 #define CommonHeader \

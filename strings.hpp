@@ -1,27 +1,11 @@
 // i have like 100 strings, not leaking all of them
-const uintptr_t luaO_nilobject = Attempt to migrate WeakObjectRef across VM boundary
-const uintptr_t luaT_Eventnames = __call
-const uintptr_t luaT_typenames = userdata
-const uintptr_t RawScheduler = HumanoidParallelManagerTaskQueue
-const uintptr_t HashTableLookup = Unable to query property {}. It is not scriptable
-const uintptr_t ScriptContextResume = Script execution is not allowed in this context | ScriptResumeBlocked
-const uintptr_t FlogDataBank = WindowsRealtimeProtocolEnabled
-const uintptr_t KTable = Trying to call method on object of type: `%s` with incorrect arguments.
-const uintptr_t LockViolationInstanceCrash =  LockViolationInstanceCrash 
-const uintptr_t luaH_dummynode = Attempt to migrate WeakObjectRef across VM boundary
-const uintptr_t TaskSchedulerTargetFps = TaskSchedulerTargetFps
-const uintptr_t OpcodeLookupTable = ; R%d: %s%s from %d to %d
-const uintptr_t FireTouchInterest = new overlap in different world
-const uintptr_t GetGlobalState = Script Start
-const uintptr_t GetFFlag = _DataCenterFilter
-
 // some new ones (tested on version-5cf2272675e145f5)
 const uintptr_t print = Breakpoint %s:%d ignored: %s
 const uintptr_t luaL_register = name conflict for module '%s'
 const uintptr_t luaH_dummynode = "{\"type\":\"table\",\"cat\":%d,\"size\":%d" // can use ,\"pairs\":[ and \"%p\" and ,\"metatable\": and more too
 const uintptr_t overlap = new overlap in different world // look for a number, convert it to hex (e.g. if u see 496 and press h its 1f0 so thats the overlap offset)
 const uintptr_t Register = Local player already exists
-const uintptr_t RobloxLogCrash = Invalid Facet Access
+const uintptr_t RobloxLogCrash = Invalid Facet Access // sub_4AF5610(0, "Invalid Facet Access"); like this
 const uintptr_t coroutine.close = cannot close %s coroutine
 const uintptr_t luaB_newproxy = nil or boolean
 const uintptr_t luaB_pcallrun = xpcall
@@ -36,7 +20,7 @@ const uintptr_t luaopen_base = xpcall
 const uintptr_t luaB_assert = assertion failed!
 const uintptr_t lua_pushfstringL = %s: bytecode version mismatch (expected [%d..%d], got %d) // call after xref
 const uintptr_t luaV_gettable = '__index' chain too long; possible loop
-const uintptr_t luaV_settable = '__newindex' chain too long; possible loop
+const uintptr_t luaV_settable = '__newindex' chain too long; possible loop // theres luaO_nilobject in here btw :v:
 const uintptr_t lua_break = attempt to break across metamethod/C-call boundary
 const uintptr_t lua_yield = attempt to yield across metamethod/C-call boundary
 const uintptr_t luaG_runerrorl = '__index' chain too long; possible loop // call after xref
@@ -46,11 +30,20 @@ const uintptr_t luaL_typeerrorL = invalid argument #%d to '%s' (%s expected, got
 const uintptr_t luaL_argerrorl = invalid argument #%d to '%s' (%s)
 const uintptr_t pusherror = error in error handling // func at xref
 const uintptr_t f_luaopen = error in error handling // second func at xref
-const uintptr_t GetTlsPointer = AggregateBroadphaseGrids // first call in func (click on it and it returns the real GetTlsPointer)
+const uintptr_t GetFFlag = FLog::ResetFilters] ParseAndSetFilterValue saving {} = {} for {} // Hi guys im a retard. it isnt hard to get this:
+/*
+    if ( (unsigned __int8)sub_4B27090(a1, a2, Src, v21, a5) )// GetFFlag
+    {
+      if ( (unsigned __int8)xmmword_7956BE0 >= 6u && BYTE1(xmmword_7956BE0) >= 5u )
+      {
+        v36 = "[FLog::ResetFilters] ParseAndSetFilterValue saving {} = {} for {}";
+*/
+const uintptr_t SetFFlag = [FLog::FastLogValueChanged] Setting variable {} // func at xref
+const uintptr_t GetTlsPointer = AggregateBroadphaseGrids // return call (click on it and it returns the real GetTlsPointer)
 const uintptr_t GetIdentityStruct = GetStyled(): Property %s is write-only // second call in func
 const uintptr_t IdentityPtr = GetStyled(): Property %s is write-only // go into GetIdentityStruct (double click it) and it returns the IdentityPtr to GetTlsPointer
 //
-const uintptr_t InstancePush = Binding does not exist // figure it out yourself, not that hard
+const uintptr_t InstancePush = Binding does not exist // figure it out yourself
 const uintptr_t ClassDescriptor = Could not find property descriptor // figure it out yourslelf
 const uintptr_t GetProperty = Could not find property descriptor // figure it out yourself
 const uintptr_t JobName = HumanoidParallelManagerTaskQueue // 3rd qword in func
@@ -65,8 +58,6 @@ const uintptr_t ScriptContextToResume = "Can't resume script in this context" //
 const uintptr_t BitMap = 0x7fffffffffff // constant in RobloxPlayerBeta.dll
 const uintptr_t ControlFlowGuard = 0x7fffffffffff // constant in RobloxPlayerBeta.dll
 // unsure ones:
-const uintptr_t SetFFlag = [FLog::ResetFilters] ApplyFilteredVariables resetting {} to {} // i think
-const uintptr_t GetFFlag = GetFFlag // i think
 const uintptr_t WndProcessCheck = WndProcessCheck // i think
 const uintptr_t LuaStepIntervalMsOverrideEnabled = LuaStepIntervalMsOverrideEnabled // i think
 const uintptr_t PhysicsSenderMaxBandwidthBps = PhysicsSenderMaxBandwidthBps // i think

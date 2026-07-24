@@ -197,7 +197,7 @@ namespace Offsets
         const uintptr_t Send = REBASE(0x40b80e0);
     } // namespace Raknet
 
-    namespace Luau // got FUCKED by this roblox update, do not use!
+    namespace Luau // got FUCKED by this roblox update
     {
         const uintptr_t currfuncname = REBASE(0x7ec4c0);
         const uintptr_t f_luaopen = REBASE(0x7eb910);

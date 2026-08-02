@@ -1,4 +1,5 @@
 // verified
+// i was injected for 40 mins with this no crash btw
 
 #pragma once
 #include <iostream>

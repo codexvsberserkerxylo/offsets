@@ -150,9 +150,10 @@ namespace Offsets
 
     namespace ScriptContext
     {
-        inline constexpr uintptr_t IsCoreScript = 0x22;
+        inline constexpr uintptr_t IsCoreScript = 0x168;
         const uintptr_t Resume = REBASE(0x1e21510);
-        inline constexpr uintptr_t ToResume = 0x61b53f6;
+        inline constexpr uintptr_t RequireBypass = 0x9d0;
+        inline constexpr uintptr_t ToResume = 0x7d0;
     } // namespace ScriptContext
 
     namespace BasePart
@@ -186,7 +187,7 @@ namespace Offsets
     namespace RobloxThread
     {
         const uintptr_t GetIdentityStruct = REBASE(0x4c2ce10);
-        const uintptr_t GetTlsPointer = REBASE(0xfffffffffc27d8f3);
+        const uintptr_t GetTlsPointer = REBASE(0x80e0);
         const uintptr_t IdentityPtr = REBASE(0x8392b28);
         const uintptr_t Impersonator = REBASE(0x640230);
     } // namespace RobloxThread

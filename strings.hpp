@@ -1,4 +1,3 @@
-// i have like 100 strings, not leaking all of them
 // some new ones (tested on version-5cf2272675e145f5)
 const uintptr_t print = Breakpoint %s:%d ignored: %s
 const uintptr_t luaL_register = name conflict for module '%s'
@@ -30,7 +29,7 @@ const uintptr_t luaL_typeerrorL = invalid argument #%d to '%s' (%s expected, got
 const uintptr_t luaL_argerrorl = invalid argument #%d to '%s' (%s)
 const uintptr_t pusherror = error in error handling // func at xref
 const uintptr_t f_luaopen = error in error handling // second func at xref
-const uintptr_t GetFFlag = FLog::ResetFilters] ParseAndSetFilterValue saving {} = {} for {} // Hi guys im a retard. it isnt hard to get this:
+const uintptr_t GetFFlag = [FLog::ResetFilters] ParseAndSetFilterValue saving {} = {} for {} // 
 /*
     if ( (unsigned __int8)sub_4B27090(a1, a2, Src, v21, a5) )// GetFFlag
     {
@@ -39,7 +38,7 @@ const uintptr_t GetFFlag = FLog::ResetFilters] ParseAndSetFilterValue saving {} 
         v36 = "[FLog::ResetFilters] ParseAndSetFilterValue saving {} = {} for {}";
 */
 const uintptr_t SetFFlag = [FLog::FastLogValueChanged] Setting variable {} // func at xref
-const uintptr_t GetTlsPointer = AggregateBroadphaseGrids // return call (click on it and it returns the real GetTlsPointer)
+const uintptr_t GetTlsPointer = AggregateBroadphaseGrids // return call (click on it and it returns gettlspointer)
 const uintptr_t GetIdentityStruct = GetStyled(): Property %s is write-only // second call in func
 const uintptr_t IdentityPtr = GetStyled(): Property %s is write-only // go into GetIdentityStruct (double click it) and it returns the IdentityPtr to GetTlsPointer
 //
@@ -103,7 +102,6 @@ const uintptr_t task.cancel = cannot cancel thread
  *   qword_761ADE8 = (__int64)sub_1DAA210;   // task.cancel
  * and these are all offsets for the task lib (found this accidentally)
  */
-
 
 // coroutine lib
 const uintptr_t coroutine.close = cannot close %s coroutine

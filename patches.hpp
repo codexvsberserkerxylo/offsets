@@ -1,4 +1,4 @@
-// might be wrong idc tho
+// verified
 
 #pragma once
 #include <iostream>
@@ -35,9 +35,9 @@ namespace Patches {
         inline uintptr_t processScan = 0xDEDF7C;
         inline uintptr_t yaraCaller = 0x8850A9;
         inline uintptr_t consoleCheck = 0x13BEA91;
-        inline uintptr_t whitelist = 0x15203CF;
-        inline uintptr_t loadLock = 0x863280;
-        inline uintptr_t dllMainInitCallIntercept = 0xD61DF1;
+        inline uintptr_t whitelist = 0xD61DF1;
+        inline uintptr_t loadLock = 0x15203CF;
+        inline uintptr_t dllMainInitCallIntercept = 0x863280;
         inline uintptr_t controlFlowGuard = 0x12E9FC0;
         inline uintptr_t certificateCheck = 0xE1C0E7;
     }

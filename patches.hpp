@@ -1,5 +1,5 @@
-// verified
-// i was injected for 40 mins with this no crash btw
+// verified + stable (i was injected for like 2 hours, no crash)
+// ill update this everytime roblox updates (maybe)
 
 #pragma once
 #include <iostream>

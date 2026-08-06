@@ -278,7 +278,15 @@ namespace Offsets
 
     namespace Coroutine
     {
-
+        const uintptr_t close = REBASE(0x4176480);
+        const uintptr_t create = REBASE(0x4175B90);
+        const uintptr_t isyieldable = REBASE(0x4176400);
+        const uintptr_t resume = REBASE(0x4b7e960);
+        const uintptr_t running = REBASE(0x4176390); // ??
+        const uintptr_t status = REBASE(0x4b7e6a0);
+        const uintptr_t wrap = REBASE(0x41760D0);
+        const uintptr_t yield = REBASE(0x4176330);
+        const uintptr_t idk = REBASE(0x4174500); // status or resume prob idk
     } // namespace Coroutine
 
     namespace Signals

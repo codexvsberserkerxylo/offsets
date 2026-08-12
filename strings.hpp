@@ -9,7 +9,7 @@
 const uintptr_t print = Breakpoint %s:%d ignored: %s
 const uintptr_t luaL_register = name conflict for module '%s'
 const uintptr_t luaH_dummynode = "{\"type\":\"table\",\"cat\":%d,\"size\":%d" // can use ,\"pairs\":[ and \"%p\" and ,\"metatable\": and more too
-const uintptr_t overlap = new overlap in different world // look for a number, convert it to hex (e.g. if u see 496 and press h its 0x1f8 so thats the overlap offset)
+const uintptr_t overlap = new overlap in different world // look for a number, convert it to hex (e.g. if u see 504 and press h its 0x1f8 so thats the overlap offset)
 const uintptr_t Register = Local player already exists
 const uintptr_t RobloxLogCrash = Invalid Facet Access // sub_4AF5610(0, "Invalid Facet Access"); like this
 const uintptr_t coroutine.close = cannot close %s coroutine

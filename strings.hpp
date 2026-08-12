@@ -3,7 +3,14 @@
   i
   c
   k
+  
+  everyone just thinks i am a stupid mf
+  but well
+  i just ignore that and do my stuff
 */
+
+// if youre gonna use the strings atleast make a good dumper
+// our brains are gone :sob:
 
 // some new ones (tested on version-5cf2272675e145f5)
 const uintptr_t print = Breakpoint %s:%d ignored: %s

@@ -1,52 +1,200 @@
-// not confirmed prob wrong
-// ion dump structs so
-#define PROTO_ABSLINEINFO_ENC vmval3
-#define PROTO_DEBUGINSN_ENC vmval4
-#define PROTO_LINEINFO_ENC vmval1
-#define PROTO_LOCVARS_ENC vmval4
-#define PROTO_SOURCE_ENC vmval4
-#define PROTO_TYPEINFO_ENC vmval4
-#define PROTO_UPVALUES_ENC vmval1
-#define PROTO_USERDATA_ENC vmval3
+#pragma once
 
-typedef struct Proto
+#include <cstdint>
+#include <string>
+#include <Windows.h>
+
+struct lua_State;
+struct YieldState;
+struct YieldingLuaThread;
+
+#define REBASE(Address) (Address + reinterpret_cast<uintptr_t>(GetModuleHandleA(nullptr)))
+
+namespace Offsets
 {
-    CommonHeader; // 0x0
-    uint8_t is_vararg; // 0x3
-    uint8_t flags; // 0x4
-    uint8_t nups; // 0x5
-    uint8_t numparams; // 0x6
-    uint8_t maxstacksize; // 0x7
-    PROTO_USERDATA_ENC<void*> userdata; // 0x8
-    PROTO_SOURCE_ENC<TString*> source; // 0x10
-    struct Proto** p; // 0x18
-    PROTO_UPVALUES_ENC<TString**> upvalues; // 0x20
-    uintptr_t exectarget; // 0x28
-    PROTO_DEBUGNAME_ENC<TString*> debugname; // 0x30
-    void* execdata; // 0x38
-    PROTO_DEBUGINSN_ENC<uint8_t*> debuginsn; // 0x40
-    GCObject* gclist; // 0x48
-    TValue* k; // 0x50
-    Instruction* code; // 0x58
-    const Instruction* codeentry; // 0x60
-    PROTO_LOCVARS_ENC<struct LocVar*> locvars; // 0x68
-    uintptr_t field_70; // 0x70
-    PROTO_TYPEINFO_ENC<uint8_t*> typeinfo; // 0x78
-    PROTO_LINEINFO_ENC<uint8_t*> lineinfo; // 0x80
-    uintptr_t field_88; // 0x88
-    int sizek; // 0x8C
-    int linegaplog2; // 0x90
-    int sizelocvars; // 0x94
-    int sizep; // 0x98
-    int sizecode; // 0x9C
-    int bytecodeid; // 0xA0
-    int sizelineinfo; // 0xA4
-    int sizeupvalues; // 0xA8
-    int sizetypeinfo; // 0xAC
-    PROTO_ABSLINEINFO_ENC<int*> abslineinfo; // 0xB0
-    int sizeabslineinfo; // 0xB8
-    int linedefined; // 0xBC
-    uintptr_t field_C0; // 0xC0
-    uintptr_t field_C8; // 0xC8
-    uintptr_t field_D0; // 0xD0
-} Proto;
+    const uintptr_t Print = REBASE(0x4c27bf0);
+    const uintptr_t OpcodeLookupTable = REBASE(0x639f7b0);
+    const uintptr_t ScriptContextResume = REBASE(0x1e21510);
+    const uintptr_t GetLuaStateForInstance = REBASE(0x1d56360);
+    const uintptr_t GetProperty = REBASE(0xc8aca0); // GetPropertyData
+    const uintptr_t LuaVMLoad = REBASE(0x1d9ff00);
+    const uintptr_t get_capabilities = REBASE(0x4c2d260);
+    const uintptr_t KTable = REBASE(0x85a7390);
+    const uintptr_t PushInstance = REBASE(0x1d48ca0);
+    const uintptr_t TaskDefer = REBASE(0x1e95640);
+
+    namespace TaskScheduler
+    {
+        inline constexpr uintptr_t JobName = 0x18;
+        inline constexpr uintptr_t JobsEnd = 0xd0;
+        inline constexpr uintptr_t JobsStart = 0xc8;
+        inline constexpr uintptr_t MaxFps = 0x1d0;
+        const uintptr_t Pointer = REBASE(0x84a58e0);
+        const uintptr_t TargetFps = REBASE(0x83a5638);
+    } // namespace TaskScheduler
+
+    namespace Luau
+    {
+        const uintptr_t Luau_Execute = REBASE(0x4b7b430);
+        const uintptr_t LuaO_NilObject = REBASE(0x6bc0438);
+        const uintptr_t LuaH_DummyNode = REBASE(0x6bc02c8);
+        const uintptr_t LuaD_Throw = REBASE(0x4b68390);
+    }
+
+    namespace RobloxThread
+    {
+        const uintptr_t IdentityPtr = REBASE(0x8392b28);
+        const uintptr_t GetTlsPointer = REBASE(0x80e0);
+        const uintptr_t Capabilities = 0x28;
+    }
+
+    namespace InstanceBase {
+        const uintptr_t CastArgs = REBASE(0x1d370e0);
+        const uintptr_t HashLookup = REBASE(0x5079d10);
+        const uintptr_t PropertyDescriptorBitFlags = 0x8c;
+        const uintptr_t Properties = 0x3c0;
+        const uintptr_t ScriptableMask = 0x10;
+        const uintptr_t ClassDescriptor = 0x18;
+        const uintptr_t ClassName = 0x8;
+        const uintptr_t Primitive = 0x128;
+        const uintptr_t Overlap = 0x1f0;
+        const uintptr_t PropDescriptor = 0x28;
+
+        const uintptr_t Scriptable = 0x90;
+        const uintptr_t ScriptableFlags = 0x10;
+
+        const uintptr_t PropertyHashTable = 0x250; // aka propertymap :sob:
+
+        const uintptr_t get_set = 0x98;
+        const uintptr_t getter = 0x18;
+        const uintptr_t ttype = 0x68;
+        const uintptr_t ttype_number = 0x30;
+
+        const uintptr_t Signature = 0x48;
+
+        enum DescriptorType : int
+        {
+            DescriptorType_Property = 0x0,
+            DescriptorType_Event = 0x1,
+            DescriptorType_Function = 0x2,
+            DescriptorType_YieldFunction = 0x3,
+            DescriptorType_Callback = 0x4,
+        };
+    }
+
+    namespace Connection {
+        const uintptr_t next = 0x10;
+        const uintptr_t enabled = 0x20;
+        const uintptr_t slot_wrapper = 0x30;
+        const uintptr_t slot_wrapper_self = 0x38;
+    }
+
+    namespace Signals
+    {
+        const uintptr_t FireMouseClick = REBASE(0x26ADEE0);
+        const uintptr_t FireRightMouseClick = REBASE(0x26AE550);
+        const uintptr_t FireMouseHoverEnter = REBASE(0x26AE0F0);
+        const uintptr_t FireMouseHoverLeave = REBASE(0x26AE2E0);
+        const uintptr_t FireTouchInterest = REBASE(0x2B25900);
+        const uintptr_t FireProximityPrompt = REBASE(0x26E9EC0);
+
+        namespace SignalSlot {
+            constexpr uintptr_t isOnce = 0x95;
+            namespace Refs {
+                constexpr uintptr_t luaThreadRefId = 0x30;
+                constexpr uintptr_t functionRefId = 0x34;
+            }
+        }
+    }
+
+    namespace DataModel
+    {
+        const uintptr_t Children = 0x70;
+        const uintptr_t GameLoaded = 0x578;
+        const uintptr_t ScriptContext = 0x440;
+        const uintptr_t FakeDataModelToDataModel = 0x1d0;
+
+        const uintptr_t FakeDataModelPointer = REBASE(0x7e26978);
+    }
+
+    namespace ByteCode {
+        inline constexpr uintptr_t Pointer = 0x10;
+        inline constexpr uintptr_t Size = 0x20;
+        inline constexpr uintptr_t Script = 0x190;
+        inline constexpr uintptr_t Module = 0x138;
+    }
+
+    namespace Scripts {
+        const uintptr_t weak_thread_node = 0x180;
+        const uintptr_t weak_thread_ref = 0x8;
+        const uintptr_t weak_thread_ref_live = 0x20;
+        const uintptr_t weak_thread_ref_live_thread = 0x8;
+    }
+
+    namespace ExtraSpace
+    {
+        const uintptr_t RequireBypass = 0x9d0;
+        const uintptr_t ScriptContextToResume = 0x7d0;
+    }
+
+    namespace Actor
+    {
+        inline const uintptr_t WriteLock = 0x720;
+        const uintptr_t ParallelFlag = 0x100;
+        const uintptr_t Parent = 0x68;
+        inline const uintptr_t ResumeFacet = 0x7e0;
+        const uintptr_t TaskDesynchronize = REBASE(0x1e95c80);
+        const uintptr_t TaskSynchronize = REBASE(0x1e966a0);
+    }
+}
+
+namespace Roblox
+{
+    // luau
+    inline auto Print = (uintptr_t(*)(int, const char*, ...))Offsets::Print;
+    inline auto Luau_Execute = (void(__fastcall*)(lua_State*))Offsets::Luau::Luau_Execute;
+    inline auto GetLuaStateForInstance = (lua_State * (__fastcall*)(uint64_t, uint64_t*, uint64_t*))Offsets::GetLuaStateForInstance;
+    inline auto ScriptContextResume = (uint64_t(__fastcall*)(uint64_t, YieldState*, YieldingLuaThread**, uint32_t, uint8_t, uint64_t))Offsets::ScriptContextResume;
+    inline auto KTable = reinterpret_cast<uintptr_t*>(Offsets::KTable);
+    inline auto LuaD_Throw = (void(__fastcall*)(lua_State*, int))Offsets::Luau::LuaD_Throw;
+    inline auto LuaVMLoad = reinterpret_cast<int(*)(lua_State*, std::string*, const char*, int)>(Offsets::LuaVMLoad);
+
+    // identity
+    using TGetIdentityStruct = uintptr_t(__fastcall*)(uintptr_t);
+    inline auto GetIdentityStruct = reinterpret_cast<TGetIdentityStruct>(Offsets::RobloxThread::GetTlsPointer);
+    using GetCapabilitiesFn = uint64_t(__fastcall*)(int identity);
+    const auto GetCapabilities = reinterpret_cast<GetCapabilitiesFn>(Offsets::get_capabilities);
+
+    // task
+    using TaskDefer_t = int(__fastcall*)(lua_State*);
+    inline TaskDefer_t TaskDefer = reinterpret_cast<TaskDefer_t>(Offsets::TaskDefer);
+
+    // properties
+    inline auto CastArgs = reinterpret_cast<uintptr_t(__fastcall*)(lua_State*, int, void*, bool, int)>(Offsets::InstanceBase::CastArgs);
+    using GetPropertyT = uintptr_t(*)(uintptr_t, uintptr_t*);
+    using HashLookupT = uintptr_t(*)(const char*);
+    inline GetPropertyT GetProperty = reinterpret_cast<GetPropertyT>(Offsets::GetProperty);
+    inline HashLookupT HashLookup = reinterpret_cast<HashLookupT>(Offsets::InstanceBase::HashLookup);
+
+    // signals
+    using fireclick_t = void(__fastcall*)(void* clickDetector, float distance, void* player);
+    inline auto FireMouseClick = reinterpret_cast<fireclick_t>(Offsets::Signals::FireMouseClick);
+    inline auto FireRightMouseClick = reinterpret_cast<fireclick_t>(Offsets::Signals::FireRightMouseClick);
+    using firehover_t = void(__fastcall*)(void* clickDetector, void* player);
+    inline auto FireMouseHover = reinterpret_cast<firehover_t>(Offsets::Signals::FireMouseHoverEnter);
+    inline auto FireMouseHoverLeave = reinterpret_cast<firehover_t>(Offsets::Signals::FireMouseHoverLeave);
+    inline auto FireTouchInterest = (void(__fastcall*)(uintptr_t, uintptr_t, uintptr_t, bool, bool))Offsets::Signals::FireTouchInterest;
+    inline auto FireProximityPrompt = (void(__thiscall*)(uintptr_t))Offsets::Signals::FireProximityPrompt;
+
+    // other
+    using PushInstance_t = void(__fastcall*)(lua_State*, void*);
+    inline auto PushInstance = reinterpret_cast<PushInstance_t>(Offsets::PushInstance);
+
+    namespace InstanceBridge {
+        inline auto UintPtr = (void(__fastcall*)(lua_State*, std::uintptr_t))Offsets::PushInstance;
+        inline auto Shared = (void(__fastcall*)(lua_State*, std::shared_ptr<std::uintptr_t*>))Offsets::PushInstance;
+        inline auto Void = (void(__fastcall*)(lua_State*, void**))Offsets::PushInstance;
+        inline auto Void2 = (void(__fastcall*)(lua_State*, void*))Offsets::PushInstance;
+        inline auto Weak = (void(__fastcall*)(lua_State*, std::weak_ptr<std::uintptr_t>))Offsets::PushInstance;
+    }
+}

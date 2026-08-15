@@ -11,6 +11,7 @@
 
 // if youre gonna use the strings atleast make a good dumper
 // our brains are gone :sob:
+// 10 stars on this shit and ill add more gatekept ass strings
 
 // some new ones (tested on version-5cf2272675e145f5)
 const uintptr_t print = Breakpoint %s:%d ignored: %s
@@ -144,3 +145,118 @@ const uintptr_t coroutine.resume = too many arguments to resume
  *
  * btw under all of this if u scroll down a bit theres more libs like the string lib, bit lib and more
  */
+
+// and because for some reason people cant dump reflection types:
+const uintptr_t ReflectionTypes = ProtectedString // use ur brain
+// look at ts: (cleaned up a little bit)
+char *__fastcall sub_8FAF80(int a1) {
+    switch (a1) {
+        case 0: return "Void";
+        case 1: return "Bool";
+        case 2: return "Int";
+        case 3: return "Int64";
+        case 4: return "Float";
+        case 5: return "Double";
+        case 6: return "String";
+        case 7: return "ProtectedString";
+        case 8: return "Instance";
+        case 9: return "Instances";
+        case 10: return "Ray";
+        case 11: return "Vector2";
+        case 12: return "Vector3";
+        case 13: return "Vector2Int16";
+        case 14: return "Vector3Int16";
+        case 15: return "Rect2d";
+        case 16: return "CoordinateFrame";
+        case 17: return "Color3";
+        case 18: return "Color3uint8";
+        case 19: return "UDim";
+        case 20: return "UDim2";
+        case 21: return "Faces";
+        case 22: return "Axes";
+        case 23: return "Region3";
+        case 24: return "Region3Int16";
+        case 25: return "CellId";
+        case 26: return "GuidData";
+        case 27: return "PhysicalProperties";
+        case 28: return "BrickColor";
+        case 29: return "SystemAddress";
+        case 30: return "BinaryString";
+        case 31: return "Surface";
+        case 32: return "CollectionHandle";
+        case 33: return "Enum";
+        case 34: return "Property";
+        case 35: return "Tuple";
+        case 36: return "ValueArray";
+        case 37: return "ValueTable";
+        case 38: return "ValueMap";
+        case 39: return "Variant";
+        case 40: return "GenericFunction";
+        case 41: return "WeakFunctionRef";
+        case 42: return "ColorSequence";
+        case 43: return "ColorSequenceKeypoint";
+        case 44: return "NumberRange";
+        case 45: return "NumberSequence";
+        case 46: return "NumberSequenceKeypoint";
+        case 47: return "InputObject";
+        case 48: return "Connection";
+        case 49: return "ContentId";
+        case 50: return "DescribedBase";
+        case 51: return "RefType";
+        case 52: return "QFont";
+        case 53: return "QDir";
+        case 54: return "EventInstance";
+        case 55: return "TweenInfo";
+        case 56: return "DockWidgetPluginGuiInfo";
+        case 57: return "PluginDrag";
+        case 58: return "Random";
+        case 59: return "PathWaypoint";
+        case 60: return "FloatCurveKey";
+        case 61: return "RotationCurveKey";
+        case 62: return "ValueCurveKey";
+        case 63: return "SharedString";
+        case 64: return "DateTime";
+        case 65: return "RaycastParams";
+        case 66: return "RaycastResult";
+        case 67: return "OverlapParams";
+        case 68: return "LazyTable";
+        case 69: return "DebugTable";
+        case 70: return "CatalogSearchParams";
+        case 71: return "OptionalCoordinateFrame";
+        case 72: return "CSGPropertyData";
+        case 73: return "UniqueId";
+        case 74: return "Font";
+        case 75: return "SharedTable";
+        case 76: return "SharedTableIterator";
+        case 77: return "AnimationMask";
+        case 78: return "AnimationPose";
+        case 79: return "ClipEvaluator";
+        case 80: return "OpenCloudModel";
+        case 81: return "InstanceRef";
+        case 82: return "SecurityCapabilities";
+        case 83: return "ArticulatedJoint";
+        case 84: return "AnimationContext";
+        case 85: return "Secret";
+        case 86: return "Buffer";
+        case 87: return "Integer";
+        case 88: return "Path2DControlPoint";
+        case 89: return "ReplicationPV";
+        case 90: return "FacsReplicationData";
+        case 91: return "AnimationMaskModifier";
+        case 92: return "Content";
+        case 93: return "NetAssetHandle";
+        case 94: return "NetAssetRef";
+        case 95: return "Object";
+        case 96: return "AdReward";
+        case 97: return "AssetContentMap";
+        case 98: return "SlimReplicationData";
+        case 99: return "User";
+        case 100: return "WebViewParams";
+        case 101: return "AnimTrackPlayState";
+        case 102: return "AnimTrackMetadata";
+        case 103: return "AnimTrackWeight";
+        case 104: return "ScopedInstanceIdentity";
+        case 105: return (char *)&word_6B5E060;
+        default: return &byte_61058A5;
+    }
+}

@@ -9,9 +9,7 @@
   i just ignore that and do my stuff
 */
 
-// if youre gonna use the strings atleast make a good dumper
-// our brains are gone :sob:
-// 10 stars on this shit and ill add more gatekept ass strings
+// 10 stars on this shit and ill add more strings
 
 // some new ones (tested on version-5cf2272675e145f5)
 const uintptr_t print = Breakpoint %s:%d ignored: %s
@@ -71,12 +69,6 @@ const uintptr_t ScriptContextToResume = "Can't resume script in this context" //
 //
 const uintptr_t BitMap = 0x7fffffffffff // constant in RobloxPlayerBeta.dll
 const uintptr_t ControlFlowGuard = 0x7fffffffffff // constant in RobloxPlayerBeta.dll
-// unsure ones:
-const uintptr_t WndProcessCheck = WndProcessCheck // i think
-const uintptr_t LuaStepIntervalMsOverrideEnabled = LuaStepIntervalMsOverrideEnabled // i think
-const uintptr_t PhysicsSenderMaxBandwidthBps = PhysicsSenderMaxBandwidthBps // i think
-const uintptr_t WebSocketServiceEnableClientCreation = WebSocketServiceEnableClientCreation // i think
-const uintptr_t LockViolationScriptCrash = LockViolationScriptCrash // i think
 
 // raknet (tested on version-5cf2272675e145f5)
 // 3/4 are accurate

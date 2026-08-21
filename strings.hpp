@@ -55,12 +55,12 @@ const uintptr_t SetFFlag = "[FLog::FastLogValueChanged] Setting variable {}" // 
 const uintptr_t GetTlsPointer = "Current identity is %d" // just scroll up a little and a func that looks like sub_xxxx (4 chars) is it (this is the GetTlsPointer_wrapper) but in it u can find the GetTlsPointer (sub_xxxx too)
 const uintptr_t IdentityPtr = "Current identity is %d" // 
 //
-const uintptr_t JobName = HumanoidParallelManagerTaskQueue // 3rd qword in func
-const uintptr_t RawScheduler = HumanoidParallelManagerTaskQueue // dword before xref
-const uintptr_t MaxFps = Out of arbiter nodes: Increase the FInt::TaskSchedulerMaxNumOfArbiters value // figure it out
-const uintptr_t TaskSchedulerPointer = Out of arbiter nodes: Increase the FInt::TaskSchedulerMaxNumOfArbiters value // figure it out
-const uintptr_t JobsEnd = Out of arbiter nodes: Increase the FInt::TaskSchedulerMaxNumOfArbiters value // figure it out
-const uintptr_t JobsStart = TaskScheduler // 2nd qword in func i think 
+const uintptr_t JobName = "HumanoidParallelManagerTaskQueue" // 3rd qword in func
+const uintptr_t RawScheduler = "HumanoidParallelManagerTaskQueue" // dword before xref
+const uintptr_t MaxFps = "Out of arbiter nodes: Increase the FInt::TaskSchedulerMaxNumOfArbiters value" // figure it out
+const uintptr_t TaskSchedulerPointer = "Out of arbiter nodes: Increase the FInt::TaskSchedulerMaxNumOfArbiters value" // figure it out
+const uintptr_t JobsEnd = "Out of arbiter nodes: Increase the FInt::TaskSchedulerMaxNumOfArbiters value" // figure it out
+const uintptr_t JobsStart = "TaskScheduler" // 2nd qword in func i think 
 const uintptr_t ScriptContextResume = "Can't resume script in this context" // func at xref
 const uintptr_t ScriptContextToResume = "Can't resume script in this context" // scroll up completely then go a little down till its not random shit anymore, its just a decimal
 //

@@ -139,7 +139,7 @@ namespace Offsets
         // other
         static const uint64_t patcheb[] = {
             0x238e4, 0x4e9e1, 0x704d0, 0x707ac, 0x832a4, 
-            0x92be0, 0xa43e8, 0x10a60ec, 0xa984e67
+            0x92be0, 0xa43e8, 0x10a60ec
         };
     } // namespace Hyperion
 

@@ -1,4 +1,3 @@
-(this is only for educational and research purposes only)
+# always latest roblox internal offsets
 
-# roblox internal offsets
-(i check them sometimes)
+## Hello this is only for educational and research purposes im not encouraging people to cheat dont cheat its bad

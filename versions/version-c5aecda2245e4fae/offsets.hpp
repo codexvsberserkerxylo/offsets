@@ -145,7 +145,8 @@ namespace Offsets
 
     namespace DataModel
     {
-        const uintptr_t FakeDataModelPointer = REBASE(0x8dc2258);
+        const uintptr_t DataModelDeleterPointer = REBASE(0x4ba5fac);
+        const uintptr_t FakeDataModelPointer = REBASE(0x894f978);
         inline constexpr uintptr_t FakeToRealDataModel = 0x1f8;
         inline constexpr uintptr_t GameLoaded = 0x5d8;
         inline constexpr uintptr_t JobId = 0x118;
@@ -157,7 +158,12 @@ namespace Offsets
     namespace TaskScheduler
     {
         const uintptr_t RawScheduler = REBASE(0x7bff6f0);
-        // um
+        const uintptr_t Pointer = REBASE(0x8abd728);
+        inline constexpr uintptr_t MaxFPS = 0xb0;
+        inline constexpr uintptr_t JobStart = 0xc8;
+        inline constexpr uintptr_t JobEnd = 0xd0;
+        inline constexpr uintptr_t JobName = 0x18;
+        const uintptr_t TargetFps = REBASE(0x8abd7d8);
     } // namespace TaskScheduler
 
     namespace ByteCode

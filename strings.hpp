@@ -1,5 +1,5 @@
 /*
-  hi
+  made by nick (@.weound)
   call after xref means sub_xxxx(string) and the sub is the offset
   if theres no comments then its the func at xref (function at the xref)
 */

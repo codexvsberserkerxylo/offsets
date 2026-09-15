@@ -90,7 +90,7 @@ const uintptr_t RequireBypass = "Cannot require a RobloxScript module from a non
   {
     v26 = *(_QWORD *)(a1 + 88);                 // userdata
     v153 = *(_OWORD *)(v26 + 64);               // identity
-    v154 = *(_QWORD *)(v26 + 80);               // prob some other member
+    v154 = *(_QWORD *)(v26 + 80);               // capabilities
     if ( (sub_8F7FD0(&v153) & 8) != 0 )
     {
       if ( (*(_BYTE *)(v129 + 360) & 1) == 0 )  // IsCoreScript

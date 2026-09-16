@@ -48,4 +48,6 @@ more funcs (func at xref)
 
 
 
+
+
 btw in `luaG_pusherror` theres `pushfstring_nocheck` (sub at the `stack overflow` string and the last sub like this `return sub_xxxx(a1, (int)"%s:%d: %s", v8, v12, v3);`), `luaC_step`, `lua_checkstack`, `luaM_newgco`, `luaM_newpage`, `luaM_allocgco`, `luaM_toobig`, `luaO_chunkid` (`2` subs before `pushfstring_nocheck` at the `return`)

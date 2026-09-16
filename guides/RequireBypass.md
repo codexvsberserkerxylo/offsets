@@ -24,9 +24,13 @@ and you will be somewhere like this:
 (the func you are inside is `GetModuleFromVMStateMap` and theres `raiseerror` too as you can see in the pseudocode) 
 
 the big decimal offset (`4 numbers`) is the `RequireBypass` offset (press h to turn it into hex),
+
 `v29` is `userdata`,
+
 `v157[0]` is `identity`,
+
 `v157[1]` is `capabilities`,
+
 the `decimal` in the if before the xref (`360` in my case) is `IsCoreScript` 
 
 boom now you have the offsets for `RequireBypass, IsCoreScript, identity, userdata, capabilities`

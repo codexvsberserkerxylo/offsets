@@ -57,3 +57,15 @@ luaV_doarithimpl_TM_POW
 (in order)
 
 and well boom you have all `luaV_doarithimpl` variants and their offsets
+
+## extra:
+in each `luaV_doarithimpl` variant theres gonna be something like this at the xref:
+```
+LABEL_26:
+  result = (float *)call_binTM(a1, (_DWORD)a3, (_DWORD)v7, a2, 8);
+  if ( !(_DWORD)result )
+    luaG_aritherror(a1, a3, (int *)v7, 8);
+  return result;
+}
+```
+and thats another free offset `call_binTM`

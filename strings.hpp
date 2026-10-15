@@ -2,18 +2,18 @@
   made by nick (@.weound)
   call after xref means sub_xxxx(string) and the sub is the offset
   if theres no comments then its the func at xref (function at the xref)
+  atleast credit me if you use these strings
 */
 
 // luau stuff
-const uintptr_t print = "Breakpoint %s:%d ignored: %s"
+const uintptr_t print = "Breakpoint %s:%d ignored: %s" // or "Current identity is %d"
 const uintptr_t luaL_register = "name conflict for module '%s'"
 const uintptr_t lua_resume = "too many arguments to resume"
 const uintptr_t luaopen_bit32 = "os"
 const uintptr_t luaopen_os = "bit32"
 const uintptr_t lua_createtable = "Unexpected trailing character: '{}'"
 const uintptr_t luaO_str2d = "Bad argument occupancy[%d][%d][%d] to 'WriteVoxels'" // call after xref
-const uintptr_t luau_execute = "iterate over"
-const uintptr_t luau_load = "bytecode corrupted"
+const uintptr_t luau_execute_false = "iterate over"
 const uintptr_t RaiseErr = "Attempt to migrate WeakObjectRef across VM boundary" /// calla fter xref
 const uintptr_t luaL_error = "name conflict for module '%s'" // xall after xref
 const uintptr_t lua_getfield = "invalid argument #%d to '%s' (%s expected, got %s)" // trust
@@ -53,9 +53,9 @@ const uintptr_t SetFFlag = "[FLog::FastLogValueChanged] Setting variable {}" // 
 
 // property stuff
 const uintptr_t ClassDescriptor = "Could not find property descriptor" // decimal (turn into hex)
-const uintptr_t getter, ttype, ttype_number, scriptable = "Unable to query property {}. It is not scriptable"
-const uintptr_t GetProperty = "%s is not a valid member of %s \"%s\"" // call after xref
-const uintptr_t GetValues = "Invalid table key type used"
+const uintptr_t getter, ttype, ttype_number, scriptable = "Unable to query property {}. It is not scriptable" // decimals too 
+const uintptr_t GetProperty = "%s is not a valid member of %s \"%s\"" // ??
+const uintptr_t GetValues = "Invalid table key type used" // ??
 
 // instance
 const uintptr_t GetModuleFromVMStateMap = "Requested module was required recursively"
@@ -114,7 +114,7 @@ const uintptr_t Overlap = "new overlap in different world" // appears like 50 ti
 */
 const uintptr_t FireTouchInterest = "new overlap in different world" // last return sub_xxx at the bottom of the xref
 const uintptr_t FireRightMouseClick = "EchoSoundEffect" // call after xref
-const uintptr_t FireMouseClick = "[FLog::CSG3Errors] Failed to create CDEC recomputation's async task" // first call in fun
+const uintptr_t FireMouseClick = "[FLog::CSG3Errors] Failed to create CDEC recomputation's async task" // first call in func
 const uintptr_t FireProximityPrompt = "getBestFitProximityPrompts"
 const uintptr_t TouchInterest = "TouchInterest"
 const uintptr_t InvokeClient = "InvokeClient can only be called from the server"
@@ -208,7 +208,7 @@ char *__fastcall sub_8FAF80(int a1) {
         case 4: return "Float";
         case 5: return "Double";
         case 6: return "String";
-        case 7: return "ProtectedString";
+        case 7: return "ProtectedString"; // i wonder why we are using this string 🤔🤔🤔🤔🤔🤔
         case 8: return "Instance";
         case 9: return "Instances";
         // more cases here bla bla bla
@@ -217,7 +217,7 @@ char *__fastcall sub_8FAF80(int a1) {
     }
 }
 
-// boom ez
+// js iterate through all of those and then boom you have your reflectiontypes
 
 // other stuff
 const uintptr_t ConnectionDisconnect = "Function Connection.Disconnect is not safe to call in parallel" // prob

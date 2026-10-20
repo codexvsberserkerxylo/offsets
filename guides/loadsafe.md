@@ -1,6 +1,6 @@
 # loadsafe
 
-search for string `%s: bytecode corrupted` and then scroll to the top of the func, and thats `luau_load`
+search for string `%s: bytecode corrupted` and then scroll to the top of the func, and thats `loadsafe`
 
 ## extra:
 

@@ -1,5 +1,5 @@
 # RequireBypass
-## (and IsCoreScript, identity, capabilities, userdata)
+## (and IsRobloxScript, identity, capabilities, userdata)
 
 search for the string `Cannot require a RobloxScript module from a non RobloxScript context`, xref it then decompile obviously
 and you will be somewhere like this:
@@ -31,6 +31,6 @@ the big decimal offset (`4 numbers`) is the `RequireBypass` offset (press h to t
 
 `v157[1]` is `capabilities`,
 
-the `decimal` in the if before the xref (`360` in my case) is `IsCoreScript` 
+the `decimal` in the if before the xref (`360` in my case) is `IsRobloxScript` 
 
-boom now you have the offsets for `RequireBypass, IsCoreScript, identity, userdata, capabilities`
+boom now you have the offsets for `RequireBypass, IsRobloxScript, identity, userdata, capabilities`

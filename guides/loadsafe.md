@@ -1,5 +1,4 @@
-# luau_load
-(currently inlined i think)
+# loadsafe
 
 search for string `%s: bytecode corrupted` and then scroll to the top of the func, and thats `luau_load`
 
@@ -16,4 +15,4 @@ and `luaO_chunkid` is right before it:
   result = lua_pushfstringL(v3, "%s: bytecode corrupted", v17);
 ```
 
-if you look at the xrefs to `luau_load` you will see `4` xrefs that are in the same func and thats `luaVM_load`
+if you look at the xrefs to `loadsafe` you will see `~4` xrefs that are in the same func and thats `luaVM_load`

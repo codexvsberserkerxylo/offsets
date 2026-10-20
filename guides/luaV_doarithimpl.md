@@ -20,14 +20,14 @@ void __fastcall __noreturn luaG_aritherror(__int64 a1, int *a2, int *a3, int a4)
   v4 = a4;
   v7 = (const char *)(luaT_objtypename(a1, a2) + 24);
   v8 = (const char *)(luaT_objtypename(a1, a3) + 24);
-  v9 = (const char *)(*((_QWORD *)&off_63EABD0 + v4) + 2LL);
+  v9 = (const char *)(*((_QWORD *)&luaT_eventname + v4) + 2LL);
   if ( v7 == v8 )
     luaG_runerrorL(a1, (__int64)"attempt to perform arithmetic (%s) on %s", v9, v7);
   luaG_runerrorL(a1, (__int64)"attempt to perform arithmetic (%s) on %s and %s", v9, v7, v8);
 }
 ```
 
-(2 more free offsets)
+(3 more free offsets)
 
 and if you press X on `luaG_aritherror` (the sub you are inside) you will see the xrefs to it,
 and every xref to it is one `luaV_doarithimpl` variant
@@ -69,3 +69,4 @@ LABEL_26:
 }
 ```
 and thats another free offset `call_binTM`
+(the other offsets are luaV_tonumber)

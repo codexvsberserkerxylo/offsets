@@ -1,5 +1,5 @@
 /*
-  made by nick (@.weound)
+  made by nick
   call after xref means sub_xxxx(string) and the sub is the offset
   if theres no comments then its the func at xref (function at the xref)
   atleast credit me if you use these strings
@@ -14,10 +14,10 @@ const uintptr_t luaopen_os = "bit32"
 const uintptr_t lua_createtable = "Unexpected trailing character: '{}'"
 const uintptr_t luaO_str2d = "Bad argument occupancy[%d][%d][%d] to 'WriteVoxels'" // call after xref
 const uintptr_t luau_execute_false = "iterate over"
-const uintptr_t RaiseErr = "Attempt to migrate WeakObjectRef across VM boundary" /// calla fter xref
-const uintptr_t luaL_error = "name conflict for module '%s'" // xall after xref
+const uintptr_t RaiseErr = "Attempt to migrate WeakObjectRef across VM boundary" /// call after xref
+const uintptr_t luaL_error = "name conflict for module '%s'" // call after xref
 const uintptr_t lua_getfield = "invalid argument #%d to '%s' (%s expected, got %s)" // trust
-const uintptr_t lua_newstate = "error in error handling" // second fucn at xref i think
+const uintptr_t lua_newstate = "error in error handling" // second func at xref i think
 const uintptr_t luaG_runerror = "table overflow" // call after xref
 const uintptr_t luaG_aritherror = "attempt to perform arithmetic (%s) on %s"
 const uintptr_t luaH_dummynode = "{\"type\":\"table\",\"cat\":%d,\"size\":%d" // its a unk a little over the string
@@ -40,7 +40,7 @@ const uintptr_t luaV_settable = "'__newindex' chain too long; possible loop" // 
 const uintptr_t lua_break = "attempt to break across metamethod/C-call boundary"
 const uintptr_t lua_yield = "attempt to yield across metamethod/C-call boundary" // small func is it but bigger func is Instance::WaitForChild
 const uintptr_t luaG_runerrorl = "'__index' chain too long; possible loop" // call after xref
-const uintptr_t luaopen_math = "sqrt2" // func at xre´f
+const uintptr_t luaopen_math = "sqrt2" // func at xref
 const uintptr_t lua_setfield = "sqrt2" // call after xref
 const uintptr_t luaL_typerrorL = "invalid argument #%d to '%s' (%s expected, got %s)"
 const uintptr_t luaL_argerrorL = "invalid argument #%d to '%s' (%s)"

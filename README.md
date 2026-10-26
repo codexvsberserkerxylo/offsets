@@ -4,12 +4,11 @@ repository with very cool roblox offsets (and guides)
 **REMINDER**: make an issue if i named a offset wrong or something similar, since im using offset names from other offset dumpers i might have some names wrong
 
 # disclaimer
-everything in this repository is strictly for educational purposes, i really dont support any kind of client modification. i take no liability or responsibility for what you do with any of this info, and like i said before, im completely against client mods.
-(dont cheat)
+everything in this repository is strictly for educational and research purposes. i do not support client modification or cheating of any kind, don't do it. i take zero responsibility or liability for how you use this information.
 
-using this with malicious intent violates ROBLOX™ terms of service (ToS) and breaks the law. if i get any info on someone using this maliciously ill report it by myself.
+if you choose to use any of this with malicious intent, you're violating roblox tos and on your own. 
 
-ROBLOX™ staff and engineers are free to use this repo to patch whatever they need, and if requested this repository will be wiped as soon as i see the notice since ill fully cooperate.
+to roblox staff and engineers: you are completely free to look through here and patch whatever you need. if you ever need this repository taken down, just let me know and i will delete it immediately.
 
 ## star history
 

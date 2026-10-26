@@ -1,0 +1,72 @@
+# luaV_doarithimpl
+
+to find all of the variants of `luaV_doarithimpl` you need to first search for the string
+`
+attempt to perform arithmetic (%s) on %s and %s
+`
+(or `attempt to perform arithmetic (%s) on %s`)
+
+and then xref it, decompile obviously and then you will be in `luaG_aritherror`.
+
+it will look like this:
+```
+void __fastcall __noreturn luaG_aritherror(__int64 a1, int *a2, int *a3, int a4)
+{
+  __int64 v4; // rdi
+  const char *v7; // rsi
+  const char *v8; // rax
+  const char *v9; // r8
+
+  v4 = a4;
+  v7 = (const char *)(luaT_objtypename(a1, a2) + 24);
+  v8 = (const char *)(luaT_objtypename(a1, a3) + 24);
+  v9 = (const char *)(*((_QWORD *)&luaT_eventname + v4) + 2LL);
+  if ( v7 == v8 )
+    luaG_runerrorL(a1, (__int64)"attempt to perform arithmetic (%s) on %s", v9, v7);
+  luaG_runerrorL(a1, (__int64)"attempt to perform arithmetic (%s) on %s and %s", v9, v7, v8);
+}
+```
+
+(3 more free offsets)
+
+and if you press X on `luaG_aritherror` (the sub you are inside) you will see the xrefs to it,
+and every xref to it is one `luaV_doarithimpl` variant
+so it goes like this:
+`luaV_doarithimpl_TM_ADD` (first xref)
+to 
+`luaV_doarithimpl_TM_UNM` (last xref)
+and all inbetween are
+`
+luaV_doarithimpl_TM_SUB
+`,
+`
+luaV_doarithimpl_TM_MUL
+`,
+`
+luaV_doarithimpl_TM_DIV
+`,
+`
+luaV_doarithimpl_TM_IDIV
+`,
+`
+luaV_doarithimpl_TM_MOD
+`,
+`
+luaV_doarithimpl_TM_POW
+`
+(in order)
+
+and well boom you have all `luaV_doarithimpl` variants and their offsets
+
+## extra:
+in each `luaV_doarithimpl` variant theres gonna be something like this at the xref:
+```
+LABEL_26:
+  result = (float *)call_binTM(a1, (_DWORD)a3, (_DWORD)v7, a2, 8);
+  if ( !(_DWORD)result )
+    luaG_aritherror(a1, a3, (int *)v7, 8);
+  return result;
+}
+```
+and thats another free offset `call_binTM`
+(the other offsets are luaV_tonumber)

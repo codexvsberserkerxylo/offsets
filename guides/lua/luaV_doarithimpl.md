@@ -67,7 +67,7 @@ and well boom you have all `luaV_doarithimpl` variants and their offsets
 
 ## extra:
 in each `luaV_doarithimpl` variant theres gonna be something like this at the xref:
-```
+```c
 LABEL_26:
   result = (float *)call_binTM(a1, (_DWORD)a3, (_DWORD)v7, a2, 8);
   if ( !(_DWORD)result )

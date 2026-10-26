@@ -14,3 +14,13 @@ ROBLOX™ staff and engineers are free to use this repo to patch whatever they n
 ## other shit
 genuinely losing hope in humanity since ive seen around 3-5 people larp with my offsets already, giving credits isnt that hard
 i wont say names but you know who you are
+
+## star history
+
+<a href="https://www.star-history.com/?repos=codexvsberserkerxylo%2Foffsets&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=codexvsberserkerxylo/offsets&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=codexvsberserkerxylo/offsets&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=codexvsberserkerxylo/offsets&type=date&legend=top-left" />
+ </picture>
+</a>

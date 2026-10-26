@@ -21,8 +21,3 @@ to roblox staff and engineers: you are completely free to look through here and 
    <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=codexvsberserkerxylo/offsets&type=date&legend=top-left" />
  </picture>
 </a>
-
-
-## other shit
-genuinely losing hope in humanity since ive seen around 3-5 people larp with my offsets already, giving credits isnt that hard
-i wont say names but you know who you are

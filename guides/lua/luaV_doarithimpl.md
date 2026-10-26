@@ -9,7 +9,7 @@ attempt to perform arithmetic (%s) on %s and %s
 and then xref it, decompile obviously and then you will be in `luaG_aritherror`.
 
 it will look like this:
-```
+```c
 void __fastcall __noreturn luaG_aritherror(__int64 a1, int *a2, int *a3, int a4)
 {
   __int64 v4; // rdi
@@ -36,24 +36,31 @@ so it goes like this:
 to 
 `luaV_doarithimpl_TM_UNM` (last xref)
 and all inbetween are
+
 `
 luaV_doarithimpl_TM_SUB
 `,
+
 `
 luaV_doarithimpl_TM_MUL
 `,
+
 `
 luaV_doarithimpl_TM_DIV
 `,
+
 `
 luaV_doarithimpl_TM_IDIV
 `,
+
 `
 luaV_doarithimpl_TM_MOD
 `,
+
 `
 luaV_doarithimpl_TM_POW
 `
+
 (in order)
 
 and well boom you have all `luaV_doarithimpl` variants and their offsets

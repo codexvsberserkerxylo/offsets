@@ -2,7 +2,7 @@
 
 search for the string `table overflow`, xref any of it then you will be somewhere like this:
 
-```
+```c
 sub_xxxx((__int64)a1, (__int64)"table overflow", 0xFFFFFFFFLL, v36);
 ```
 

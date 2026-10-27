@@ -2,13 +2,16 @@
 
 search for the string `table overflow`, xref any of it then you will be somewhere like this:
 
-```c
+```
 sub_xxxx((__int64)a1, (__int64)"table overflow", 0xFFFFFFFFLL, v36);
 ```
 
 and thats the `luaG_runerrorL` offset
 
-## extra:
+<details>
+
+<summary><b>extra</b></summary>
+
 if you double click `luaG_runerrorL` then theres gonna be around `4` sub funcs inside of it
 
 the `2nd` one is `luaD_growstack`,
@@ -51,3 +54,6 @@ more funcs (func at xref)
 
 
 btw in `luaG_pusherror` theres `pushfstring_nocheck` (sub at the `stack overflow` string and the last sub like this `return sub_xxxx(a1, (int)"%s:%d: %s", v8, v12, v3);`), `luaC_step`, `lua_checkstack`, `luaM_newgco`, `luaM_newpage`, `luaM_allocgco`, `luaM_toobig`, `luaO_chunkid` (`2` subs before `pushfstring_nocheck` at the `return`)
+
+
+</details>

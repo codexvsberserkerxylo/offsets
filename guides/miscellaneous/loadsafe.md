@@ -19,4 +19,5 @@ and `luaO_chunkid` is right before it:
 
 if you look at the xrefs to `loadsafe` you will see `~4` xrefs that are in the same func and thats `luaVM_load`
 
+
 </details>

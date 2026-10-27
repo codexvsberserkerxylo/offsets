@@ -18,11 +18,11 @@ void __fastcall __noreturn luaG_aritherror(__int64 a1, int *a2, int *a3, int a4)
   const char *v9; // r8
 
   v4 = a4;
-  v7 = (const char *)(luaT_objtypename(a1, a2) + 24);
+  v7 = (const char *)(luaT_objtypename(a1, a2) + 24); // <---- omg free offset!
   v8 = (const char *)(luaT_objtypename(a1, a3) + 24);
-  v9 = (const char *)(*((_QWORD *)&luaT_eventname + v4) + 2LL);
+  v9 = (const char *)(*((_QWORD *)&luaT_eventname + v4) + 2LL); // <---- and another???
   if ( v7 == v8 )
-    luaG_runerrorL(a1, (__int64)"attempt to perform arithmetic (%s) on %s", v9, v7);
+    luaG_runerrorL(a1, (__int64)"attempt to perform arithmetic (%s) on %s", v9, v7); // <---- ...and another?
   luaG_runerrorL(a1, (__int64)"attempt to perform arithmetic (%s) on %s and %s", v9, v7, v8);
 }
 ```
@@ -36,36 +36,32 @@ so it goes like this:
 to 
 `luaV_doarithimpl_TM_UNM` (last xref)
 and all inbetween are
-
 `
 luaV_doarithimpl_TM_SUB
 `,
-
 `
 luaV_doarithimpl_TM_MUL
 `,
-
 `
 luaV_doarithimpl_TM_DIV
 `,
-
 `
 luaV_doarithimpl_TM_IDIV
 `,
-
 `
 luaV_doarithimpl_TM_MOD
 `,
-
 `
 luaV_doarithimpl_TM_POW
 `
-
 (in order)
 
 and well boom you have all `luaV_doarithimpl` variants and their offsets
 
-## extra:
+<details>
+
+<summary><b>extra</b></summary>
+
 in each `luaV_doarithimpl` variant theres gonna be something like this at the xref:
 ```c
 LABEL_26:
@@ -77,3 +73,5 @@ LABEL_26:
 ```
 and thats another free offset `call_binTM`
 (the other offsets are luaV_tonumber)
+
+</details>

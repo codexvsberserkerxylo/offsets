@@ -6,7 +6,7 @@ search for the string
 
 then you will be somewhere like this:
 
-```
+```c
   v11 = sub_xxxx(sub_xxxx);
   v12 = v11;
   v734 = v11;
@@ -14,12 +14,15 @@ then you will be somewhere like this:
     raiseerror("Failed to create Lua state");
 ```
 
-and `v11` is `lua_newstate`
+and `v11` is `lua_newstate`, kinda obvious since if `!v11` then it throws `Failed to create Lua state`
 
-## extra:
+<details>
+
+<summary><b>extra</b></summary>
+
 if you go inside of `lua_newstate` and scroll to the end of the func you will be somewhere like this:
 
-```
+```c
   if ( (unsigned int)luaD_rawrunprotected(v5, sub_xxxx, 0) )
   {
     sub_xxxx(v5);
@@ -36,7 +39,7 @@ if you double click that func you need to scroll to the bottom of it (its not th
 
 and then you will see something like this: 
 
-```
+```c
   sub_xxxx(a1, a1, (unsigned __int8 (__fastcall *)(__int64, __int64, __int64))sub_xxxx);
   sub_xxxx(a1, **(_QWORD **)(a1 + 24), 8LL * *(int *)(*(_QWORD *)(a1 + 24) + 8LL), 0);
   sub_xxxx(a1, *(_QWORD *)(a1 + 72), 48LL * *(int *)(a1 + 132), *(unsigned __int8 *)(a1 + 1));
@@ -63,7 +66,7 @@ and
 
 `deletegco` is this: 
 
-```
+```c
  sub_xxxx(a1, a1, (unsigned __int8 (__fastcall *)(__int64, __int64, __int64))sub_xxxx);
 ```
 
@@ -71,7 +74,7 @@ its the `2nd` sub_xxxx
 
 so you want to now double click on `deletegco`, then you will see something like this:
 
-```
+```c
 char __fastcall deletegco(__int64 a1, __int64 a2, __int64 a3)
 {
   sub_xxxx(a1, a3, a2);
@@ -82,7 +85,7 @@ char __fastcall deletegco(__int64 a1, __int64 a2, __int64 a3)
 and theres `freeobj` (the only sub_xxxx)
 now you want to double click on `freeobj`, and then you need to scroll to the bottom, then you will be somewhere like this:
 
-```
+```c
     case 0xF:
       return luaF_freeproto(a1, a2, a3);        // luaF_freeproto
     case 0x10:
@@ -117,3 +120,6 @@ and `luaM_freegco` is just the last sub in the func
 and in `case 0xB` theres `luaM_freegcocaged` and in `case 7` theres gonna be an `unk_xxxx` and thats `luaH_dummynode`
 
 boom now you have even more offsets from ONE string
+
+
+</details>

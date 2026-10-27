@@ -2,7 +2,9 @@
 
 search for string `%s: bytecode corrupted` and then scroll to the top of the func, and thats `loadsafe`
 
-## extra:
+<details>
+
+<summary><b>extra</b></summary>
 
 theres `lua_pushfstringL` right at the xref:
 
@@ -16,3 +18,5 @@ and `luaO_chunkid` is right before it:
 ```
 
 if you look at the xrefs to `loadsafe` you will see `~4` xrefs that are in the same func and thats `luaVM_load`
+
+</details>

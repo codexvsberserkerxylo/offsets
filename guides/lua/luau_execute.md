@@ -10,16 +10,14 @@ and the only `jmp` xref to `luau_execute_false` is well `luau_execute`
 so if you xref and decompile the `jmp` one (its around 10 lines big)
 
 you are somewhere like this:
-```
-__int64 __fastcall sub_xxxxxx(__int64 a1, __int64 a2, signed __int64 n)
+```c
+__int64 __fastcall sub_xxxxxx(__int64 a1, __int64 a2, signed __int64 n) // <--- luau_execute
 {
   if ( *(_BYTE *)(a1 + 6) )
-    return sub_xxxxxx(a1);
+    return sub_xxxxxx(a1); // <--- luau_execute_true
   else
-    return sub_xxxxxx(a1, a2, n);
+    return sub_xxxxxx(a1, a2, n);  // <--- luau_execute_false
 }
 ```
 
-and well thats it, that func is `luau_execute`
-
-the first sub_xxxx is `luau_execute_true`, last one is `luau_execute_false` btw
+and thats it, that func is `luau_execute`

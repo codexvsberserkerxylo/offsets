@@ -10,7 +10,7 @@ theres `lua_pushfstringL` right at the xref:
 
 and `luaO_chunkid` is right before it:
 
-```
+```c
   v17 = (const char *)luaO_chunkid(v1058, 256, v7, v16);
   result = lua_pushfstringL(v3, "%s: bytecode corrupted", v17);
 ```

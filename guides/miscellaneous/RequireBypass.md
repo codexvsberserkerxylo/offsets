@@ -1,20 +1,19 @@
 # RequireBypass
-## (and IsRobloxScript, identity, capabilities, userdata)
 
 search for the string `Cannot require a RobloxScript module from a non RobloxScript context`, xref it then decompile obviously
 and you will be somewhere like this:
-```
-  if ( !*(_BYTE *)(v28 + 2996) )
+```c
+  if ( !*(_BYTE *)(v28 + 2996) ) // <--- RequireBypass
   {
-    v29 = *(_QWORD *)(a1 + 96);
-    v157[0] = *(_OWORD *)(v29 + 48);
-    v157[1] = *(_OWORD *)(v29 + 64);
+    v29 = *(_QWORD *)(a1 + 96); // <--- userdata
+    v157[0] = *(_OWORD *)(v29 + 48); // <--- identity
+    v157[1] = *(_OWORD *)(v29 + 64); // <--- capabilities
     if ( (sub_xxxxx(v157, v28, v25) & 8) != 0 )
     {
-      if ( (*(_BYTE *)(v130 + 360) & 1) == 0 )
+      if ( (*(_BYTE *)(v130 + 360) & 1) == 0 ) // <--- IsRobloxScript
         raiseerror("Cannot require a non-RobloxScript module from a RobloxScript");
     }
-    else if ( (*(_BYTE *)(v130 + 360) & 1) != 0 )
+    else if ( (*(_BYTE *)(v130 + 360) & 1) != 0 ) // <--- IsRobloxScript
     {
       raiseerror("Cannot require a RobloxScript module from a non RobloxScript context");
     }

@@ -7,7 +7,7 @@ and you will be somewhere like this:
   {
     v29 = *(_QWORD *)(a1 + 96); // <--- userdata
     v157[0] = *(_OWORD *)(v29 + 48); // <--- identity
-    v157[1] = *(_OWORD *)(v29 + 64); // <--- capabilities
+    v157[1] = *(_OWORD *)(v29 + 64); // <--- scriptcontext
     if ( (sub_xxxxx(v157, v28, v25) & 8) != 0 )
     {
       if ( (*(_BYTE *)(v130 + 360) & 1) == 0 ) // <--- IsRobloxScript
@@ -24,12 +24,16 @@ and you will be somewhere like this:
 
 the big decimal offset (`4 numbers`) is the `RequireBypass` offset (press h to turn it into hex),
 
+
 `v29` is `userdata`,
+
 
 `v157[0]` is `identity`,
 
-`v157[1]` is `capabilities`,
+
+`v157[1]` is `scriptcontext`,
+
 
 the `decimal` in the if before the xref (`360` in my case) is `IsRobloxScript` 
 
-boom now you have the offsets for `RequireBypass, IsRobloxScript, identity, userdata, capabilities`
+boom now you have the offsets for `RequireBypass, IsRobloxScript, identity, userdata, scriptcontext`

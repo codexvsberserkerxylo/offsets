@@ -192,7 +192,7 @@ namespace Offsets
 
     namespace BasePart
     {
-        inline constexpr uintptr_t Primitive = 0x188; // 0x178 ig
+        inline constexpr uintptr_t Primitive = 0x188;
     } // namespace BasePart
 
     namespace Connection
@@ -245,6 +245,7 @@ namespace Offsets
         const uintptr_t Receive = REBASE(0x28cee80);
         const uintptr_t RecvFromLoop = REBASE(0x28b8cf0);
         const uintptr_t ReportNetworkError = REBASE(0x48795e0);
+        const uintptr_t RPHandleActiveSystemList = REBASE(0x28b8180);
         const uintptr_t RPOnOpenConnectionReply1 = REBASE(0x28bae50);
         const uintptr_t RPReceive = REBASE(0x28a3544);
         const uintptr_t RPsetServerMachineAddress = REBASE(0x28c0ea0);

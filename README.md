@@ -1,5 +1,3 @@
-big things soon 🤫
-
 # roblox offsets
 repository with very cool roblox offsets (and guides)
 

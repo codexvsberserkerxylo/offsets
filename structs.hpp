@@ -47,13 +47,13 @@ struct Proto {
     PROTO_DEBUGNAME_ENC<TString*> debugname; /* 0x20 */
     GCObject* gclist; /* 0x28 */
     PROTO_SOURCE_ENC<TString*> source; /* 0x30 */
-    bool new_member1; /* 0x38 */
+    uint8_t execflags; /* 0x38 */ // new
     PROTO_TYPEINFO_ENC<uint8_t*> typeinfo; /* 0x40 */
     void* execdata; /* 0x48 */
     uintptr_t exectarget; /* 0x50 */
     struct Proto** p; /* 0x58 */
     PROTO_LOCVARS_ENC<struct LocVar*> locvars; /* 0x60 */
-    int new_member2; /* 0x68 */
+    uint32_t execcount; /* 0x68 */ // new
     char gap_1[0x4]; /* 0x6c */
     PROTO_USERDATA_ENC<void*> userdata; /* 0x70 */
     PROTO_ABSLINEINFO_ENC<int*> abslineinfo; /* 0x78 */
@@ -223,8 +223,13 @@ struct lua_Page {
     void* freeList; /* 0x28 */
     int freeNext; /* 0x30 */
     int busyBlocks; /* 0x34 */
-    char padding[8]; /* 0x38 */
-    char data[1]; /* 0x40 */
+    int flags; /* 0x38 */
+    char padding[sizeof(void*) == 8 ? 4 : 8]; /* 0x40 */
+    union
+    {
+        char data[1];
+        char* dataptr;
+    }; /* 0x42 */
 };
 
 struct lua_Debug {
@@ -260,8 +265,9 @@ struct global_State {
     int gcstepmul; /* 0x44 */
     size_t GCthreshold; /* 0x48 */
     size_t totalbytes; /* 0x50 */
-    uint64_t field_0x58; /* 0x58 */
-    char gap_1[0x10]; /* 0x60 */
+    struct lua_Page* allgcopages; /* 0x58 */
+    struct lua_Page* allpages; /* 0x60 */
+    struct lua_Page* sweepgcopage; /* 0x68 */
     struct lua_State* mainthread; /* 0x70 */
     UpVal uvhead; /* 0x78 */
     struct lua_Page* freepages[LUA_SIZECLASSES]; /* 0xa0 */
@@ -269,23 +275,26 @@ struct global_State {
     TString* tmname[TM_N]; /* 0x320 */
     TString* ttname[LUA_T_COUNT]; /* 0x3c8 */
     struct LuaTable* mt[LUA_T_COUNT]; /* 0x438 */
-    char gap_2[0x160]; /* 0x4a8 */
+    struct lua_Page* sweepgcopage_cage; /* 0x4a8 */
+    struct lua_jmpbuf* errorjmp; /* 0x4b0 */
+    struct lua_Page* allgcopages_cage; /* 0x4b8 */
+    lua_CageAlloc cagealloc; /* 0x4c0 */
+    struct lua_Page* freegcopages_cage[LUA_SIZECLASSES]; /* 0x4c8 */
     TValue pseudotemp; /* 0x608 */
     TValue registry; /* 0x618 */
     RegistryFree registryfree; /* 0x628 */
-    char gap_3[0xc]; /* 0x62c */
+    char gap_3[0x4]; /* 0x62c */
+    void* cageud; /* 0x630 */
     uint64_t rngstate; /* 0x638 */
     lua_Callbacks cb; /* 0x640 */
     uint64_t ptrenckey[4]; /* 0x6b0 */
     lua_ExecutionCallbacks ecb; /* 0x6d0 */
-    char gap_4[0x218]; /* 0x718 */
-    lua_UdataDirectAccessData udatadirect; /* 0x930 */
-    char gap_5[0x2c18]; /* 0x978 */
-    struct lua_Page* allgcopages; /* 0x3590 */
-    struct lua_Page* sweepgcopage; /* 0x3598 */
-    char gap_6[0x2a8]; /* 0x35a0 */
-    size_t memcatbytes; /* 0x3848 */
-    char gap_7[0x7f8]; /* 0x3850 */
+    char gap_4[0x18]; /* 0x718 */
+    alignas(16) uint8_t ecbdata[LUA_EXECUTION_CALLBACK_STORAGE]; /* 0x730 */
+    lua_UdataDirectAccessData udatadirect[UTAG_INTERNAL_LIMIT]; /* 0x930 */
+    LuauPageset taggedpageset[TAGGED_PAGESET_SIZE]; /* 0x2dc0 */
+    int sweeppageset; /* 0x3840 */
+    size_t memcatbytes[LUA_MEMORY_CATEGORIES]; /* 0x3848 */
     void (*udatagc[LUA_UTAG_LIMIT])(lua_State*, void*); /* 0x4048 */
     lua_UserdataMark udatamark[LUA_UTAG_LIMIT]; /* 0x4448 */
     LuaTable* udatamt[LUA_UTAG_LIMIT]; /* 0x4848 */
@@ -293,8 +302,8 @@ struct global_State {
     int weakregistryfree; /* 0x4c58 */
     int weakregistrytop; /* 0x4c5c */
     lua_EmbedderGc embeddergc; /* 0x4c60 */
-    TString* lightuserdataname; /* 0x4c68 */
-    char gap_8[0x808]; /* 0x4c70 */
+    TString* lightuserdataname[LUA_LUTAG_LIMIT]; /* 0x4c68 */
+    LuaTable* udatadirectfields[UTAG_INTERNAL_LIMIT]; /* 0x5068 */
     struct Closure* builtinPcall; /* 0x5478 */
     struct Closure* builtinXpcall; /* 0x5480 */
     uint64_t ptrenckeynew[8]; /* 0x5488 */
@@ -306,7 +315,6 @@ struct global_State {
 #ifdef LUAI_GCMETRICS
     GCMetrics gcmetrics; /* 0x5590 */
 #endif
-    char gap_10[0x1d8]; /* 0x5598 */
 };
 
 struct RobloxExtraSpace {

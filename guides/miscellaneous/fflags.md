@@ -1,14 +1,3 @@
-# FLogDataBank
-search for string `WindowsThemeInit`, 1st (and only) xref:
-```c
-__int64 sub_xxxxx()
-{
-  return sub_xxxxx(qword_xxxxx, "WindowsThemeInit", &qword_xxxxx, 2);
-}
-```
-
-and that `qword` behind the string is `FLogDataBank`
-
 # SetFFlag
 search for string `[FLog::FastLogValueChanged] Setting variable {}`, 1st (and only) xref:
 ```c
@@ -65,5 +54,7 @@ __int64 __fastcall sub_4305BC0(void)
 ```
 
 so the `FFlagPointer` offset is `0x8E1B0D0` / `qword_8E1B0D0`
+
+(often called FLogDataBank too)
 
 # to get the other fflag things just runtime dump them

@@ -7,7 +7,7 @@ and if its done you are in `luau_execute_false`
 now to get luau_execute you will need to scroll to the top of the func, xref the func you are in (`luau_execute_false`)
 and the only `jmp` xref to `luau_execute_false` is well `luau_execute`
 
-so if you xref and decompile the `jmp` one (its around 10 lines big)
+so if you xref and decompile the `jnz` or `jmp` one (its around 10 lines big)
 
 you are somewhere like this:
 ```c

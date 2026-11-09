@@ -24,7 +24,7 @@ right above it you will see:
 if ( *(_QWORD *)(v5 + 0x6D0) == sub_C8A0() )
 ```
 
-boom `0x6D0` is WriteLock
+boom `0x6D0` is `WriteLock`
 
 # ParallelFlag
 search for `FilterDescendantsInstances is not safe to modify in parallel`, 1st xref, decompile.

@@ -340,11 +340,13 @@ namespace Offsets
     namespace Signals
     {
         const uintptr_t FireAllClients = REBASE(0x34ab510);
-        const uintptr_t FireMouseClick = REBASE(0x61dba68);
-        const uintptr_t FireProximityPrompt = REBASE(0x30fd840);
-        const uintptr_t FireRightMouseClick = REBASE(0x61dba68);
         const uintptr_t FireServer = REBASE(0x34ab170);
         const uintptr_t FireTouchInterest = REBASE(0x2a33650);
+        const uintptr_t FireLeftMouseClick = REBASE(0x3c6daf0);
+        const uintptr_t FireRightMouseClick = REBASE(0x3c6dc90);
+        const uintptr_t FireMouseHoverEnter = REBASE(0x3c6f060);
+        const uintptr_t FireMouseHoverLeave = REBASE(0x3c6f200);
+        const uintptr_t FireProximityPrompt = REBASE(0x30fd840);
         const uintptr_t InvokeClient = REBASE(0x35834c0);
         const uintptr_t InvokeServer = REBASE(0x3586ff0);
         const uintptr_t IsLegalSendEvent = REBASE(0x4a2ae10);

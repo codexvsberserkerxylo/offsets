@@ -1,30 +1,23 @@
 # WriteLock
-search for string `[FLog::Error] [VideoDeviceInput::raiseWithDMWriteLock] Unable to raise property change due to no DataModel.`, 1st xref, decompile
+search for string `Datamodel: %p, job %s, instance %s (%p)[%s], dm amInParallelPhase: %d, dm currentThreadHasWriteLock: %d, write requesting thread: %llu, current thread: %llu, cookie: %llX, history:\n %s`, 1st xref, decompile
 
 you will be somewhere like this
 
 ```c
-      sub_4AFA090(
-        a1: (unsigned __int8 *)&v11,
-        a2: (__int64)"[FLog::Error] [VideoDeviceInput::raiseWithDMWriteLock] Unable to raise property change due to no DataModel.", // <---- anchor
-        a3: 0,
-        a4: 0,
-        a5: 0,
-        a6: 0,
-        a7: 0);
+        sub_4B529B0(
+          Src,
+          Format: "Datamodel: %p, job %s, instance %s (%p)[%s], dm amInParallelPhase: %d, dm currentThreadHasWriteLock: %d, write" // <---- anchor
+          " requesting thread: %llu, current thread: %llu, cookie: %llX, history:\n"
+          " %s");
 ```
 
-now just scroll up till you see:
-
-```&RBX::PropertyChangedSignalData::`vftable';```
-
-right above it you will see:
-
+now just scroll up till you see something like this:
 ```c
-if ( *(_QWORD *)(v5 + 0x6D0) == sub_C8A0() )
+      if ( v9 != 0 && *(_QWORD *)(v9 + 0x700) != sub_C8A0() )
+        v7 = 0;
 ```
 
-boom `0x6D0` is `WriteLock`
+boom `0x700` is `WriteLock`
 
 # ParallelFlag
 search for `FilterDescendantsInstances is not safe to modify in parallel`, 1st xref, decompile.

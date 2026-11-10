@@ -238,6 +238,7 @@ struct lua_State {
 };
 static_assert(sizeof(lua_State) == 136, "sizeof(lua_State) == 136");
 
+/* use thorioums instead of this */
 struct lua_Callbacks {
     void* userdata; /* 0x0 */
     void (*onallocate)(lua_State* L, void* block, size_t osize, size_t nsize, uint8_t memcat, int tt, int tag); /* 0x8 */
@@ -273,6 +274,7 @@ struct lua_Page {
 };
 static_assert(sizeof(lua_Page) == 72, "sizeof(lua_Page) == 72");
 
+/* use thorioums instead of this global_State */
 struct global_State {
     unsigned char currentwhite; /* 0x0 */
     char gap_0[0x1]; /* 0x1 */

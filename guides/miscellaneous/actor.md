@@ -68,3 +68,7 @@ v1 = *(_QWORD *)(a1 + 0x60); // <---- Actor.Parent
 (basically first thing in the whole function)
 
 boom `0x60` is `Actor.Parent`
+
+
+this bs took me 5 minutes to find
+like ig

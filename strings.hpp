@@ -5,6 +5,9 @@
   atleast credit me if you use these strings
 */
 
+// outdated asf now, i probably wont update this
+// use the guides in the guides folder
+
 // luau stuff
 const uintptr_t print = "Breakpoint %s:%d ignored: %s" // or "Current identity is %d"
 const uintptr_t luaL_register = "name conflict for module '%s'"
@@ -12,7 +15,6 @@ const uintptr_t lua_resume = "too many arguments to resume"
 const uintptr_t luaopen_bit32 = "os"
 const uintptr_t luaopen_os = "bit32"
 const uintptr_t lua_createtable = "Unexpected trailing character: '{}'"
-const uintptr_t luaO_str2d = "Bad argument occupancy[%d][%d][%d] to 'WriteVoxels'" // call after xref
 const uintptr_t luau_execute_false = "iterate over"
 const uintptr_t RaiseErr = "Attempt to migrate WeakObjectRef across VM boundary" /// call after xref
 const uintptr_t luaL_error = "name conflict for module '%s'" // call after xref

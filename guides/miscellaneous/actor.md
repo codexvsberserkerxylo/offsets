@@ -13,7 +13,7 @@ you will be somewhere like this
 
 now just scroll up till you see something like this:
 ```c
-      if ( v9 != 0 && *(_QWORD *)(v9 + 0x700) != sub_C8A0() )
+      if ( v9 != 0 && *(_QWORD *)(v9 + 0x700) != sub_C8A0() ) // <---- WriteLock
         v7 = 0;
 ```
 

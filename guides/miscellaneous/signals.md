@@ -4,10 +4,11 @@ search for string `new overlap in different world`, 1st xref:
 
 ```c
               sub_4B4F9A0(a1: "new overlap in different world", a2: &lParam); // <--- anchor
-            if ( (unsigned __int8)sub_1535330(a1: v54, a2: v53, a3: 0) == 0 ) // <--- FireTouchInterest
+            if ( (unsigned __int8)sub_1535330(a1: v54, a2: v53, a3: 0) == 0 )
+              sub_14D0000(a1: *(_QWORD *)(v54 + 0x200), a2: v54, a3: v53, a4: 0, a5: 0); // <--- FireTouchInterest
 ```
 
-and wow so easy `sub_1535330` is `FireTouchInterest` wow
+and wow so easy `sub_14D0000` is `FireTouchInterest` wow
 
 # Overlap, Primitive
 search for string `All parts passed to ArePartsTouchingOthers must be in the WorldRoot`, 1st xref:

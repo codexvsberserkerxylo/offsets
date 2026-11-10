@@ -1,5 +1,5 @@
 # roblox offsets
-repository with very cool roblox offsets (and guides)
+repository with very cool offsets (and guides)
 
 **REMINDER**: make an issue if i named a offset wrong or something similar, since im using offset names from other offset dumpers i might have some names wrong
 

@@ -1,29 +1,13 @@
 # FireTouchInterest
-search for string `new overlap in different world`, SECOND xref:
+search for string `new overlap in different world`, 1st xref:
 (or just go through each xref till you find a small-ish function like this that returns a sub_ and thats gonna be the right function)
 
 ```c
-__int64 __fastcall sub_18C1030(__int64 a1)
-{
-    __int64 v1;  // cse1
-
-    if (!*(_QWORD *)(*(_QWORD *)(a1 + 0x10) + 0x178)) {
-        loc_18C1076:
-        sub_4AA5FA0("new overlap in different world", 0x6690155); // <--- anchor string
-        __debug_break();
-    }
-    if (!*(_QWORD *)(*(_QWORD *)(a1 + 0x20) + 0x178)) {
-        goto loc_18C1076;
-    }
-    if (*(_QWORD *)(*(_QWORD *)(*(_QWORD *)(a1 + 0x10) + 0x178) + 0x200) != *(_QWORD *)(*(_QWORD *)(*(_QWORD *)(a1 + 0x20) + 0x178) + 0x200)) {
-        goto loc_18C1076;
-    }
-    v1 = *(_QWORD *)(*(_QWORD *)(a1 + 0x10) + 0x178);
-    return sub_155E790(*(_QWORD *)(v1 + 0x200), v1, *(_QWORD *)(*(_QWORD *)(a1 + 0x20) + 0x178), 0); // <--- this is FireTouchInterest!
-}
+              sub_4B4F9A0(a1: "new overlap in different world", a2: &lParam); // <--- anchor
+            if ( (unsigned __int8)sub_1535330(a1: v54, a2: v53, a3: 0) == 0 ) // <--- FireTouchInterest
 ```
 
-and wow so easy `sub_155E790` is `FireTouchInterest` wow
+and wow so easy `sub_1535330` is `FireTouchInterest` wow
 
 # Overlap, Primitive
 search for string `All parts passed to ArePartsTouchingOthers must be in the WorldRoot`, 1st xref:

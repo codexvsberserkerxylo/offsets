@@ -1,6 +1,8 @@
 # roblox offsets
 repository with very cool offsets (and guides)
 
+**IMPORTANT**: the encs and structs i dump are **NOT** checked. they are **FULLY UNCHECKED**, if you crash dont blame me, just use thorioum's structs. the offsets i dump should be like ~70% correct since i check which ones are wrong every ~2-3 updates. make an issue if theres an wrong offset please
+
 **REMINDER**: make an issue if i named a offset wrong or something similar, since im using offset names from other offset dumpers i might have some names wrong
 
 # disclaimer

@@ -55,6 +55,35 @@ __int64 __fastcall sub_4305BC0(void)
 
 so the `FFlagPointer` offset is `0x8E1B0D0` / `qword_8E1B0D0`
 
-(often called FLogDataBank too)
+# CrashPadPtr
+search for string `crashpad_init_end`, 1st xref, decompile
 
-# to get the other fflag things just runtime dump them
+```c
+      qword_8621EE8 = (__int64)SetUnhandledExceptionFilter(lpTopLevelExceptionFilter: TopLevelExceptionFilter); // <--- CrashPadPtr
+      sub_6021C60(a1: 0x16, a2: sub_5268140);
+      v423.m128i_i64[0] = (__int64)"crashpad_init_end"; // <--- anchor
+```
+
+`qword_8621EE8` is `CrashPadPtr`.
+
+# CrashPtr
+string `[LOGCHANNELS + 1] RBXCRASH: %s (%s)`, 1st xref
+
+```c
+  if ( CrashPtr != nullptr ) // <--- this
+    CrashPtr(); // <--- this
+  if ( a1 == nullptr )
+    goto LABEL_14;
+  if ( a2 != nullptr )
+  {
+    if ( *a1 == 0 )
+      goto LABEL_14;
+    if ( *a2 != 0 )
+    {
+      LOWORD(v10) = 0x306;
+      v8.m128i_i16[0] = 0x306;
+      v8.m128i_i64[1] = (__int64)&qword_72EA520;
+      sub_4B50A20(a1: &v8, a2: "[LOGCHANNELS + 1] RBXCRASH: %s (%s)", a1, a2); // <--- anchor
+```
+
+first thing in the whole func

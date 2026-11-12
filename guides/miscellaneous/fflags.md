@@ -87,3 +87,14 @@ string `[LOGCHANNELS + 1] RBXCRASH: %s (%s)`, 1st xref
 ```
 
 first thing in the whole func
+
+# FLogHookPtr
+search for string `TotalBytesWrittenCumulative`, 1st xref, decompile
+
+it will look somewhat like this:
+
+```c
+      if ( qword_8658D48 != 0 ) // <--- FLogHookPtr
+        v4 = sub_2A74820();
+      v39.m128i_i64[0] = (__int64)"TotalBytesWrittenCumulative"; // <--- anchor
+```

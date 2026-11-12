@@ -21,3 +21,5 @@ if you look at the xrefs to `loadsafe` you will see `~4` xrefs that are in the s
 
 
 </details>
+
+(aka `luau_load` internally)

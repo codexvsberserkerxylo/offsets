@@ -21,4 +21,4 @@ then scroll down completely till you see something like this:
 ```
 
 and well by reading the comment you could already tell that that is `print`
-
+(it takes `7 args` im pretty sure)

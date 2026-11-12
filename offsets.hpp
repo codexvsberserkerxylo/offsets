@@ -119,7 +119,7 @@ namespace Offsets
     {
         inline constexpr uintptr_t Capabilities = 0x30;
         const uintptr_t GetCapabilities = REBASE(0x1d18c30);
-        const uintptr_t GetLuaStateForInstance = REBASE(0x148e350);
+        const uintptr_t GetLuaStateForInstance = REBASE(0x42d3b20);
         const uintptr_t GetTssSlot = REBASE(0xc700);
         const uintptr_t IdentityPtr = REBASE(0x862ac48);
         const uintptr_t rbxSpawn = REBASE(0x4381b40);

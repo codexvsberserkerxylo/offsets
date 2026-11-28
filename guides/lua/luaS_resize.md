@@ -17,7 +17,7 @@ just scroll down till around line `~480` and then you need to look for something
 
 and the `sub` is `luaS_resize`
 
-# saltflag
+# LuauSaltedInterningTable
 exact same thing like `luaS_resize`
 
 
@@ -29,7 +29,7 @@ exact same thing like `luaS_resize`
 ```
 
 
-the `byte` is `saltflag`
+the `byte` is `LuauSaltedInterningTable`
 
 
 ok hi bye
